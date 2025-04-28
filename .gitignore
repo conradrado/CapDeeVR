@@ -9,6 +9,12 @@ UserSettings/
 MemoryCaptures/
 Recordings/
 
+Library/PackageCache/com.unity.burst@*/.Runtime/*.dll
+Library/PackageCache/com.unity.burst@*/.Runtime/*.dylib
+Library/PackageCache/com.unity.burst@*/.Runtime/*.so
+Library/ArtifactDB
+Library/Artifacts/*
+
 # 에셋스토어 도구 무시 (필요시 주석 해제)
 # Assets/AssetStoreTools*
 
