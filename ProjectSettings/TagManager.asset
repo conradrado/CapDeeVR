@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Box
   - Shooting Rnage Floor
+  - PlayerHand
   layers:
   - Default
   - TransparentFX
