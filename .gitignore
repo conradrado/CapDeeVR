@@ -65,6 +65,7 @@ Assets/AddressableAssetsData/*/*.bin*
 # StreamingAssets 임시 파일 무시
 Assets/StreamingAssets/aa.meta
 Assets/StreamingAssets/aa/*
+UserSettings/Layouts/*.dwlt
 
 # 기타
 .utmp/
