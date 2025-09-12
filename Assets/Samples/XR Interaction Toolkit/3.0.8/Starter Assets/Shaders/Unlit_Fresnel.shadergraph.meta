@@ -1,5 +1,12 @@
 fileFormatVersion: 2
 guid: e19b5bb6cb8e91e43b1b5d81a069296f
+AssetOrigin:
+  serializedVersion: 1
+  productId: 170222
+  packageName: XR Interaction ToolKit Starter Kit
+  packageVersion: 1.6.250208
+  assetPath: Assets/Samples/XR Interaction Toolkit/3.0.8/Starter Assets/Shaders/Unlit_Fresnel.shadergraph
+  uploadId: 731461
 ScriptedImporter:
   internalIDToNameTable: []
   externalObjects: {}
