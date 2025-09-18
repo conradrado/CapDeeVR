@@ -68,6 +68,7 @@
     <Compile Include="Assets\Unity UI Samples\Scripts\ChangeColor.cs" />
     <Compile Include="Assets\DeathTrigger.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ApplicationManager.cs" />
+    <Compile Include="Assets\Elevator.cs" />
     <Compile Include="Assets\Features\VRHands\Scripts\HandAnimator.cs" />
     <Compile Include="Assets\Scripts\HPBar.cs" />
     <Compile Include="Assets\Scripts\GunFire.cs" />
