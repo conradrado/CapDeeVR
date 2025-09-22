@@ -112,6 +112,7 @@
     <Compile Include="Assets\Samples\XR Hands\1.5.1\Gestures\Debug Tools\Scripts\XRSelectedHandShapeDebugUI.cs" />
     <Compile Include="Assets\FFOSBodySocketInventory\BodySocketInventory.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ScrollDetailTexture.cs" />
+    <Compile Include="Assets\helpMsgTrigger.cs" />
     <Compile Include="Assets\Scripts\SetTurnTypeFromPlayerPref.cs" />
   </ItemGroup>
   <ItemGroup>
