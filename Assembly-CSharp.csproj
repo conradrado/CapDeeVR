@@ -66,12 +66,12 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\HandPose.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ChangeColor.cs" />
-    <Compile Include="Assets\DeathTrigger.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\Elevator.cs" />
     <Compile Include="Assets\Features\VRHands\Scripts\HandAnimator.cs" />
     <Compile Include="Assets\Scripts\HPBar.cs" />
     <Compile Include="Assets\Scripts\GunFire.cs" />
+    <Compile Include="Assets\water_death\RestartQuitActions.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\XRLoadScene.cs" />
     <Compile Include="Assets\MyAssets\Weapon\Revolver Prefab\Scripts\ReloadSocketListener.cs" />
@@ -79,8 +79,10 @@
     <Compile Include="Assets\FFOSBodySocketInventory\UltraLowPoly\FireBullet.cs" />
     <Compile Include="Assets\Scripts\UIAudio.cs" />
     <Compile Include="Assets\VR_SafePrefab_UnityProjectStyle\Assets\SafePrefab\Scripts\SafeDoor.cs" />
+    <Compile Include="Assets\Scripts\DeathManager.cs" />
     <Compile Include="Assets\Scripts\BoxCollisionHandler.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\DragMe.cs" />
+    <Compile Include="Assets\waterDepth.cs" />
     <Compile Include="Assets\KeypadInput.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ActiveStateToggler.cs" />
     <Compile Include="Assets\Scripts\BulletDamage.cs" />
@@ -90,11 +92,13 @@
     <Compile Include="Assets\Features\VRHands\Scripts\Finger.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\PanelManager.cs" />
     <Compile Include="Assets\Scripts\MsgBox\MsgTrigger.cs" />
-    <Compile Include="Assets\DeathManager.cs" />
+    <Compile Include="Assets\SimpleSkeleton\script\SimpleSkeletonController.cs" />
+    <Compile Include="Assets\water_death\PlayerRespawn.cs" />
     <Compile Include="Assets\NPC Scripts\DamageScript.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\SceneChanger.cs" />
+    <Compile Include="Assets\Scripts\DeathTrigger.cs" />
     <Compile Include="Assets\Samples\XR Hands\1.5.1\Gestures\Debug Tools\Scripts\XRAllFingerShapesDebugUI.cs" />
     <Compile Include="Assets\Scripts\SetOptionFromUI.cs" />
     <Compile Include="Assets\Features\VRHands\Scripts\HandVisibilityToggle.cs" />
@@ -106,6 +110,7 @@
     <Compile Include="Assets\MyAssets\Objects\RootBox\BoxTrigger.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\Samples\XR Hands\1.5.1\Gestures\Debug Tools\Scripts\XRFingerShapeDebugUI.cs" />
+    <Compile Include="Assets\IgniteCoders\Simple Water Shader\Resources\WaterReflection.cs" />
     <Compile Include="Assets\MyAssets\Weapon\Revolver Prefab\Scripts\Reload.cs" />
     <Compile Include="Assets\Sci Fi Modular Pack\Scripts\CameraController.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\DropMe.cs" />
@@ -121,6 +126,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\SimpleSkeleton\Readme_SimpleSkeleton.txt" />
     <None Include="Assets\Cyber Monsters 2\Standard_Two_Sided.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
