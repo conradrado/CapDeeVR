@@ -15,7 +15,6 @@ public class BulletDamage : MonoBehaviour
     /// 충돌 시 실행되는 함수
     private void OnCollisionEnter(Collision collision)
 {
-    Debug.Log("총알 충돌!");
     // 'collision'은 이 총알(bullet)이 부딪힌 상대방과 관련된 충돌 정보이다.
     // 'collision.gameObject'는 충돌한 상대 오브젝트를 가리킨다.
 
@@ -26,7 +25,7 @@ public class BulletDamage : MonoBehaviour
     {
         // 만약 충돌한 상대가 TargetEntity 컴포넌트를 가지고 있다면,
         // 데미지를 입힌다.
-        Debug.Log("데미지!");
+        //Debug.Log("데미지!");
         target.TakeDamage(damage);
     }
 

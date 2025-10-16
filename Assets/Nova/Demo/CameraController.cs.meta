@@ -1,0 +1,18 @@
+fileFormatVersion: 2
+guid: b8ea7143fabd0455883b11a26e10ccf8
+MonoImporter:
+  externalObjects: {}
+  serializedVersion: 2
+  defaultReferences: []
+  executionOrder: 0
+  icon: {instanceID: 0}
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+AssetOrigin:
+  serializedVersion: 1
+  productId: 233271
+  packageName: Double Burreled Shotgun - Nova
+  packageVersion: 1.0
+  assetPath: Assets/Nova/Demo/CameraController.cs
+  uploadId: 527256
