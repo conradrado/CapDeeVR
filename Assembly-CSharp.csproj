@@ -73,11 +73,13 @@
     <Compile Include="Assets\Features\VRHands\Scripts\HandAnimator.cs" />
     <Compile Include="Assets\Bullet FX Pack Trail, Fire, Energy\Sources\Demo.cs" />
     <Compile Include="Assets\Scripts\GunFire.cs" />
+    <Compile Include="Assets\PumpSlide.cs" />
     <Compile Include="Assets\MyAssets\Effects\HPBar\DamageScript.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
     <Compile Include="Assets\Bullet FX Pack Trail, Fire, Energy\Sources\Scripts\Cylinder.cs" />
     <Compile Include="Assets\XRLoadScene.cs" />
     <Compile Include="Assets\MyAssets\Weapon\Revolver Prefab\Scripts\ReloadSocketListener.cs" />
+    <Compile Include="Assets\ShotgunReloadZone.cs" />
     <Compile Include="Assets\Nova\Demo\CameraController.cs" />
     <Compile Include="Assets\Scripts\MsgBox\DialogueManager.cs" />
     <Compile Include="Assets\FFOSBodySocketInventory\UltraLowPoly\FireBullet.cs" />
@@ -99,6 +101,7 @@
     <Compile Include="Assets\Scripts\MsgBox\MsgTrigger.cs" />
     <Compile Include="Assets\SimpleSkeleton\script\SimpleSkeletonController.cs" />
     <Compile Include="Assets\MyAssets\HelaingObject.cs" />
+    <Compile Include="Assets\ShotgunController.cs" />
     <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\SceneChanger.cs" />
