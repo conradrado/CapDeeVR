@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class CameraController : MonoBehaviour
+public class CameraControllersf : MonoBehaviour
 {
    public float Sensitivity = 0.9f;
 	

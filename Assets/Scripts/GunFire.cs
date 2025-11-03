@@ -57,7 +57,7 @@ public class GunFire : MonoBehaviour
 
         // 잡을 때 / 놓을 때 HUD 갱신
         grab.selectEntered.AddListener(_ => UpdateHud());
-        grab.selectExited .AddListener(_ => UpdateHud());
+        grab.selectExited.AddListener(_ => UpdateHud());
 
     }
 
@@ -110,16 +110,15 @@ public class GunFire : MonoBehaviour
         // 총구 불빛 및 파티클 효과 재생
         FlashMuzzle();
 
-        if (muzzleParticle != null){
+        /*if (muzzleParticle != null){
             muzzleParticle.Play();
-        }
+        }*/
 
 
         // 총기 애니메이션 실행
         if (gunAnimator != null)
         {   
             gunAnimator.SetTrigger("FireGun"); // Animator에서 "FireGun" 트리거 사용
-            fireSFX.PlayOneShot(gunSpin);
         }
         currentAmmo--;
         UpdateHud();

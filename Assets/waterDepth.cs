@@ -34,15 +34,14 @@ public class WaterDepth : MonoBehaviour
         // 프로파일 변경
         if (active)
         {
-            Debug.Log("Underwater!!");
+   
             RenderSettings.fog = true;
             
             postProcessingVolume.profile = underwaterPostProcessing;
         }
         else
         {   
-            
-            Debug.Log("Surface!");
+
             RenderSettings.fog = false;
             postProcessingVolume.profile = surfacePostProcessing;
         }

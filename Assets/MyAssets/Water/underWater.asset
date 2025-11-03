@@ -80,7 +80,7 @@ MonoBehaviour:
     m_Value: 0.2
   viewBias:
     m_OverrideState: 1
-    m_Value: 0.1
+    m_Value: 0.14
   scaleBiasWithMinProbeDistance:
     m_OverrideState: 1
     m_Value: 0
@@ -123,16 +123,16 @@ MonoBehaviour:
   active: 1
   postExposure:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: -1.49
   contrast:
     m_OverrideState: 1
-    m_Value: -10
+    m_Value: 54
   colorFilter:
     m_OverrideState: 1
-    m_Value: {r: 0.41015574, g: 0.51842624, b: 0.9563076, a: 1}
+    m_Value: {r: 0, g: 0.053753287, b: 0.27672952, a: 1}
   hueShift:
     m_OverrideState: 1
-    m_Value: 0
+    m_Value: -5
   saturation:
     m_OverrideState: 1
     m_Value: 1

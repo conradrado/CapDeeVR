@@ -601,7 +601,7 @@ MonoBehaviour:
   bulletPrefab: {fileID: 4359809555403939511}
   firePoint: {fileID: 390859305515178794}
   bulletForce: 20
-  maxAmmo: 3
+  maxAmmo: 6
   ammoHud: {fileID: 8809368203417263320}
   gunAnimator: {fileID: 606709014698193425}
   fireSFX: {fileID: 4354282614172600490}
@@ -633,8 +633,8 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
-  m_Resource: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: 71d2196132fee3d408369ae6f38101c7, type: 3}
+  m_Resource: {fileID: 8300000, guid: 71d2196132fee3d408369ae6f38101c7, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
