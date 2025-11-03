@@ -68,7 +68,6 @@
     <Compile Include="Assets\Unity UI Samples\Scripts\ChangeColor.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ApplicationManager.cs" />
     <Compile Include="Assets\Elevator.cs" />
-    <Compile Include="Assets\MyAssets\Turret\Turret.cs" />
     <Compile Include="Assets\Bullet FX Pack Trail, Fire, Energy\Sources\Scripts\Bullet.cs" />
     <Compile Include="Assets\Features\VRHands\Scripts\HandAnimator.cs" />
     <Compile Include="Assets\Bullet FX Pack Trail, Fire, Energy\Sources\Demo.cs" />
@@ -90,6 +89,7 @@
     <Compile Include="Assets\Unity UI Samples\Scripts\DragMe.cs" />
     <Compile Include="Assets\waterDepth.cs" />
     <Compile Include="Assets\KeypadInput.cs" />
+    <Compile Include="Assets\MyAssets\HeallingItem\Scripts\HelaingObject.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ActiveStateToggler.cs" />
     <Compile Include="Assets\Scripts\BulletDamage.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\DragPanel.cs" />
@@ -100,14 +100,13 @@
     <Compile Include="Assets\Unity UI Samples\Scripts\PanelManager.cs" />
     <Compile Include="Assets\Scripts\MsgBox\MsgTrigger.cs" />
     <Compile Include="Assets\SimpleSkeleton\script\SimpleSkeletonController.cs" />
-    <Compile Include="Assets\MyAssets\HelaingObject.cs" />
     <Compile Include="Assets\ShotgunController.cs" />
-    <Compile Include="Assets\Scripts\Bullet.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\SceneChanger.cs" />
     <Compile Include="Assets\Scripts\DeathTrigger.cs" />
     <Compile Include="Assets\Samples\XR Hands\1.5.1\Gestures\Debug Tools\Scripts\XRAllFingerShapesDebugUI.cs" />
     <Compile Include="Assets\Scripts\SetOptionFromUI.cs" />
+    <Compile Include="Assets\MyAssets\Turret\Scripts\Turret.cs" />
     <Compile Include="Assets\Features\VRHands\Scripts\HandVisibilityToggle.cs" />
     <Compile Include="Assets\Samples\XR Hands\1.5.1\Gestures\Examples\Scripts\StaticHandGesture.cs" />
     <Compile Include="Assets\Scripts\HandData.cs" />
@@ -128,6 +127,7 @@
     <Compile Include="Assets\FFOSBodySocketInventory\BodySocketInventory.cs" />
     <Compile Include="Assets\TutorialTrigger.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ScrollDetailTexture.cs" />
+    <Compile Include="Assets\MyAssets\Weapon\Bullet.cs" />
     <Compile Include="Assets\MyAssets\Effects\HPBar\HPBar.cs" />
     <Compile Include="Assets\helpMsgTrigger.cs" />
     <Compile Include="Assets\Scripts\SetTurnTypeFromPlayerPref.cs" />

@@ -30,7 +30,7 @@ public class ShotgunController : MonoBehaviour
     public GameObject projectilePrefab;   // 발사체(선택) - 없으면 단순 사운드만
     
     public int pellets = 8;                 // 발사되는 탄 수
-    public float spreadAngle = 5f;          // 퍼짐 정도 (도 단위)
+    public float spread = 5f;          // 퍼짐 정도 (도 단위)
     public float bulletSpeed = 80f;         // 총알 속도
     public GameObject muzzleFlashPrefab;    // Fire3D 머티리얼 적용된 이펙트 (선택)
 
@@ -221,11 +221,21 @@ public class ShotgunController : MonoBehaviour
 
         // 🔸 산탄 발사 (혹은 단발)
         if (projectilePrefab != null && muzzlePoint != null)
-        {
-            var bullet = Instantiate(projectilePrefab, muzzlePoint.position, muzzlePoint.rotation);
-            var rb = bullet.GetComponent<Rigidbody>();
-            if (rb != null)
-                rb.linearVelocity = muzzlePoint.forward * bulletSpeed;
+        {   
+            for (int i = 0; i < pellets; i++)
+            {
+                // 무작위 방향 벡터(원뿔 형태) 생성
+                Vector3 randomSpread = muzzlePoint.forward +
+                                    Random.insideUnitSphere * spread;
+
+                randomSpread.Normalize(); // 방향성 유지
+
+                var bullet = Instantiate(projectilePrefab, muzzlePoint.position, Quaternion.LookRotation(randomSpread));
+                var rb = bullet.GetComponent<Rigidbody>();
+
+                if (rb != null)
+                    rb.linearVelocity = randomSpread * bulletSpeed;
+            }
         }
 
         ammo--;
