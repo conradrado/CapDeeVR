@@ -106,6 +106,7 @@
     <Compile Include="Assets\SciFi Warehouse Kit\Demo\Scripts\PlayRandomSound.cs" />
     <Compile Include="Assets\ShotgunController.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
+    <Compile Include="Assets\Scripts\GameStateManager.cs" />
     <Compile Include="Assets\SceneChanger.cs" />
     <Compile Include="Assets\Scripts\DeathTrigger.cs" />
     <Compile Include="Assets\Samples\XR Hands\1.5.1\Gestures\Debug Tools\Scripts\XRAllFingerShapesDebugUI.cs" />
@@ -134,6 +135,7 @@
     <Compile Include="Assets\FFOSBodySocketInventory\BodySocketInventory.cs" />
     <Compile Include="Assets\TutorialTrigger.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ScrollDetailTexture.cs" />
+    <Compile Include="Assets\Scripts\VictoryTrigger.cs" />
     <Compile Include="Assets\MyAssets\Weapon\Bullet.cs" />
     <Compile Include="Assets\MyAssets\Effects\HPBar\HPBar.cs" />
     <Compile Include="Assets\helpMsgTrigger.cs" />

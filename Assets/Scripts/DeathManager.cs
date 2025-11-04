@@ -28,11 +28,39 @@ public class DeathManager : MonoBehaviour
             rightRay.enabled = false;
     }
 
+    private void OnEnable()
+    {
+        if (GameStateManager.Instance != null)
+            GameStateManager.Instance.OnStateChanged += HandleStateChanged;
+    }
+
+    private void OnDisable()
+    {
+        if (GameStateManager.Instance != null)
+            GameStateManager.Instance.OnStateChanged -= HandleStateChanged;
+    }
+
+    private void HandleStateChanged(GameState state)
+    {
+        if (state == GameState.GameOver)
+        {
+            if (isGameOver) return;
+            isGameOver = true;
+            StartCoroutine(FadeOutAndShowUI());
+        }
+    }
+
     /// <summary>
     /// TargetEntity에서 호출됨 (플레이어 사망 시)
     /// </summary>
     public void ShowDeathUI()
     {
+        if (GameStateManager.Instance != null)
+        {
+            Debug.Log("ShowDeathUI -> GameStateManager.GameOver");
+            GameStateManager.Instance.TriggerGameOver();
+            return;
+        }
         Debug.Log("ShowDeathUI 실행.");
         if (isGameOver) return;
         isGameOver = true;
@@ -46,7 +74,7 @@ public class DeathManager : MonoBehaviour
         float t = 0f;
         while (t < 1f)
         {
-            t += Time.deltaTime * 0.8f;
+            t += Time.unscaledDeltaTime * 0.8f;
             if (fadeMat != null)
             {
                 Color c = fadeMat.color;
@@ -65,7 +93,7 @@ public class DeathManager : MonoBehaviour
         t = 0f;
         while (t < 1f)
         {
-            t += Time.deltaTime * 0.8f;
+            t += Time.unscaledDeltaTime * 0.8f;
             if (deathCanvas)
                 deathCanvas.alpha = Mathf.Lerp(0, 1, t);
             yield return null;
@@ -91,6 +119,14 @@ public class DeathManager : MonoBehaviour
         if (rightRay)
             rightRay.enabled = false;
 
-        SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        if (GameStateManager.Instance != null)
+        {
+            GameStateManager.Instance.Restart();
+        }
+        else
+        {
+            Time.timeScale = 1f;
+            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
     }
 }
