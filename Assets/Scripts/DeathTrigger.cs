@@ -8,7 +8,7 @@ public class DeathTrigger : MonoBehaviour
     {
         if(other.CompareTag("Player")){
             Debug.Log("Player Deadzone Trigger!");
-            DeathManager.Instance.ShowDeathUI();
+            //DeathManager.ShowDeathUI();
         }
     }
 }

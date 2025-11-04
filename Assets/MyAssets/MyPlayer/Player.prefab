@@ -3044,6 +3044,7 @@ MonoBehaviour:
   isPlayer: 1
   audioSource: {fileID: 0}
   healSound: {fileID: 0}
+  deathManager: {fileID: 0}
 --- !u!1 &2413788223719753790
 GameObject:
   m_ObjectHideFlags: 0
@@ -11943,10 +11944,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 79dc13c3a8997a046b90597ad2ab5834, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  deathUIPanel: {fileID: 8915733514057180506}
-  canvasGroup: {fileID: 7114687383119663774}
-  distanceFromCamera: 0.4
-  fadeDuration: 0.4
+  fadePlane: {fileID: 0}
+  deathCanvas: {fileID: 0}
+  rightRay: {fileID: 0}
 --- !u!1 &7670734417303885214
 GameObject:
   m_ObjectHideFlags: 0

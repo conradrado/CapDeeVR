@@ -1,136 +1,96 @@
-using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.SceneManagement;
 using System.Collections;
+using UnityEngine;
+using UnityEngine.SceneManagement;
+
 
 public class DeathManager : MonoBehaviour
 {
 
-    public static DeathManager Instance;
+    [Header("💀 References")]
+    [Tooltip("페이드용 Plane (검은색 Quad, Main Camera 자식)")]
+    public Renderer fadePlane;                    // 검정 Plane (Unlit/Transparent)
+    [Tooltip("게임오버 UI CanvasGroup (World Space Canvas)")]
+    public CanvasGroup deathCanvas;               // "You Died" Canvas
 
-    [Header("Death UI")]
-    [SerializeField] private GameObject deathUIPanel;   // Death UI 전체 오브젝트
-    [SerializeField] private CanvasGroup canvasGroup;
+    [Header("🎮 XR References")]
+    public UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor rightRay;              // 오른손 Ray Interactor
 
+    private Material fadeMat;
+    private bool isGameOver = false;
 
-    [Header("Display Settings")]
-    [SerializeField] private float distanceFromCamera = 1f; // 카메라 앞 거리
-    [SerializeField] private float fadeDuration = 0.4f;     // 페이드 시간
-
-    private bool isDeath = false;
-    private Coroutine fadeCoroutine;
-
-    private void Awake()
+    void Awake()
     {
-        if (Instance == null) Instance = this;
-        else Destroy(gameObject);
+        if (fadePlane != null)
+            fadeMat = fadePlane.material;
 
-        if (canvasGroup != null)
-        {
-            canvasGroup.alpha = 0f;
-            canvasGroup.interactable = false;
-            canvasGroup.blocksRaycasts = false;
-        }
-
-        if (deathUIPanel != null)
-            deathUIPanel.SetActive(false);
+        // 시작 시 Ray 비활성화 (죽었을 때만 나오도록)
+        if (rightRay)
+            rightRay.enabled = false;
     }
 
-    IEnumerator DelayTime(){
-        yield return new WaitForSecondsRealtime(4.0f);
-        Time.timeScale = 0f;
-    }
-    
     /// <summary>
-    /// 사망 UI 표시
+    /// TargetEntity에서 호출됨 (플레이어 사망 시)
     /// </summary>
     public void ShowDeathUI()
-{
-    Debug.Log("사망UI");
-    if (isDeath) return;
-    isDeath = true;
-
-    if (deathUIPanel != null)
-        deathUIPanel.SetActive(true);
-
-    // 카메라 앞 위치로 이동
-    PositionInFrontOfCamera();
-
-    // 기존 페이드 코루틴 정지 후 새로 실행
-    if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
-    fadeCoroutine = StartCoroutine(ShowTutorialSequence());
-}
-
-    private IEnumerator ShowTutorialSequence()
-{
-    // 1. 페이드 인
-    yield return StartCoroutine(FadeCanvasGroup(canvasGroup, 0f, 1f, fadeDuration, true));
-
-    // 2. 페이드 인 끝난 뒤 4초 대기
-    yield return new WaitForSecondsRealtime(4f);
-
-    // 3. 타임스케일 정지
-    Time.timeScale = 0.1f;
-}
-
-     /// <summary>
-    /// HMD 정면에 UI 자동 배치
-    /// </summary>
-    private void PositionInFrontOfCamera()
     {
-        Camera cam = Camera.main;
-        if (cam == null) return;
-
-        Vector3 forward = cam.transform.forward;
-        Vector3 targetPos = cam.transform.position + forward * distanceFromCamera;
-
-        deathUIPanel.transform.position = targetPos;
-        deathUIPanel.transform.rotation = Quaternion.LookRotation(forward, Vector3.up);
+        Debug.Log("ShowDeathUI 실행.");
+        if (isGameOver) return;
+        isGameOver = true;
+        StartCoroutine(FadeOutAndShowUI());
     }
 
-
-    /// <summary>
-    /// CanvasGroup 페이드 인/아웃
-    /// </summary>
-    private IEnumerator FadeCanvasGroup(CanvasGroup group, float start, float end, float duration, bool setActiveAtEnd)
+    private IEnumerator FadeOutAndShowUI()
     {
-        if (group == null) yield break;
-
-        float time = 0f;
-        group.interactable = true;
-        group.blocksRaycasts = true;
-
-        while (time < duration)
+        Debug.Log("요1");
+        // 1️⃣ 페이드아웃
+        float t = 0f;
+        while (t < 1f)
         {
-            time += Time.deltaTime;
-            group.alpha = Mathf.Lerp(start, end, time / duration);
+            t += Time.deltaTime * 0.8f;
+            if (fadeMat != null)
+            {
+                Color c = fadeMat.color;
+                c.a = Mathf.Lerp(0, 1, t);
+                fadeMat.color = c;
+            }
             yield return null;
         }
 
-        group.alpha = end;
-
-        if (!setActiveAtEnd)
+        // 2️⃣ "You Died" UI 페이드인
+        if (deathCanvas)
         {
-            group.interactable = false;
-            group.blocksRaycasts = false;
-            deathUIPanel.SetActive(false);
+            deathCanvas.gameObject.SetActive(true); // 비활성 상태였다면 켜기
+            deathCanvas.alpha = 0f;                 // 알파 0에서 시작
         }
+        t = 0f;
+        while (t < 1f)
+        {
+            t += Time.deltaTime * 0.8f;
+            if (deathCanvas)
+                deathCanvas.alpha = Mathf.Lerp(0, 1, t);
+            yield return null;
+        }
+
+        // UI가 보이도록 페이드용 Quad 비활성화
+        if (fadePlane)
+            fadePlane.enabled = false;
+
+        // 3️⃣ 오른손 Ray 활성화 (죽었을 때만 켜짐)
+        if (rightRay)
+            rightRay.enabled = true;
+
+        Debug.Log(" Death UI 활성화 + Right Ray 켜짐");
     }
 
-    // 현재 씬 리로드
-    public void RestartGame()
+    /// <summary>
+    /// UI 버튼 OnClick에서 연결됨 (Restart 버튼)
+    /// </summary>
+    public void RestartScene()
     {
-        Debug.Log("리스타트 버튼 클릭됨");
-        Time.timeScale = 1f;   // 다시 정상 속도로
+        // XR Ray 비활성화 후 씬 리로드
+        if (rightRay)
+            rightRay.enabled = false;
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
-
-    // 메인 메뉴 씬으로 이동
-    public void QuitGame()
-    {
-        Debug.Log("종료 버튼 클릭됨");
-        Time.timeScale = 1f;   // 시간 정상화
-        SceneManager.LoadScene("MainMenu");  // "MainMenu"는 빌드 세팅에 반드시 추가되어야 함
-    }
-
 }

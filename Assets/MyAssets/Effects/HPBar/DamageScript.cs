@@ -14,6 +14,9 @@ public class TargetEntity : MonoBehaviour
     [Header("체력 회복 사운드 효과")]
     [SerializeField] private AudioSource audioSource;
     [SerializeField] private AudioClip healSound;
+    
+    [Header("플레이어의 죽음 처리 스크립트")]
+    public DeathManager deathManager;
 
     // 해당 엔티티, NPC의 현재 체력
     private float currentHP;
@@ -69,20 +72,22 @@ public class TargetEntity : MonoBehaviour
     
 
     /// hp가 0이 될 때, Die.
-     private void Die()
-    {
-        Debug.Log("죽음에 이르렀도다...");
+    private void Die()
+{
+    Debug.Log("죽음에 이르렀도다...");
 
-        // 플레이어의 경우 DeathManager의 게임오버 함수 호출
-        if (isPlayer){ 
-            Debug.Log("dm호출");
-            DeathManager.Instance.ShowDeathUI();
+    if (isPlayer)
+    {
+        Debug.Log("플레이어 사망, DeathManager 호출 시도");
+        deathManager.ShowDeathUI();
+            Debug.Log("DM의 메소드 실행 요청");
         }
-        else{
-            // 일정 시간 뒤에 파괴
-            float destroyDelay = 0f; // 애니메이션 길이에 맞춰 조절절
-            Destroy(gameObject, destroyDelay);
-        }
+    
+    else{
+        float destroyDelay = 0f;
+        Destroy(gameObject, destroyDelay);
 
     }
+}   
 }
+
