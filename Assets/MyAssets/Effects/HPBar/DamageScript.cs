@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.Rendering;
 
 public class TargetEntity : MonoBehaviour
 {
@@ -18,6 +19,13 @@ public class TargetEntity : MonoBehaviour
     [Header("플레이어의 죽음 처리 스크립트")]
     public DeathManager deathManager;
 
+    [Header("Damage Screen Effect")]
+    [SerializeField] private Volume damageVolume;
+    [SerializeField] private VolumeProfile normalProfile;
+    [SerializeField] private VolumeProfile damageProfile;
+    [SerializeField] private float damageFXDuration = 0.4f;
+    private Coroutine damageFxCoroutine;
+
     // 해당 엔티티, NPC의 현재 체력
     private float currentHP;
     private bool isDead = false;
@@ -27,6 +35,12 @@ public class TargetEntity : MonoBehaviour
         // 현재 체력 = 최대 체력
         currentHP = maxHP;
         hpBar.SetMaxHP(maxHP);
+        if (damageVolume != null)
+        {
+            if (normalProfile == null)
+                normalProfile = damageVolume.profile;
+            damageVolume.weight = 0f;
+        }
     }
 
     /// <summary>
@@ -40,6 +54,8 @@ public class TargetEntity : MonoBehaviour
         currentHP -= amount;
         Debug.Log("으악! HP : " + currentHP);
         hpBar.SetHP(maxHP, currentHP); 
+        if (isPlayer)
+            TriggerDamageFX();
         
         if (currentHP <= 0f) 
         {
@@ -63,6 +79,35 @@ public class TargetEntity : MonoBehaviour
         Debug.Log(amount + "만큼 타겟 엔티티 회복");
         hpBar.SetHP(maxHP, currentHP);
 
+    }
+
+    private void TriggerDamageFX()
+    {
+        if (damageVolume == null || damageProfile == null) return;
+        if (damageFxCoroutine != null) StopCoroutine(damageFxCoroutine);
+        damageFxCoroutine = StartCoroutine(DamageFlashFX());
+    }
+
+    private System.Collections.IEnumerator DamageFlashFX()
+    {
+        VolumeProfile prevProfile = damageVolume.profile;
+        if (normalProfile == null) normalProfile = prevProfile;
+
+        damageVolume.profile = damageProfile;
+        damageVolume.weight = 1f;
+
+        float t = 0f;
+        while (t < damageFXDuration)
+        {
+            t += Time.unscaledDeltaTime;
+            float w = 1f - Mathf.Clamp01(t / damageFXDuration);
+            damageVolume.weight = w;
+            yield return null;
+        }
+
+        damageVolume.profile = normalProfile;
+        damageVolume.weight = 0f;
+        damageFxCoroutine = null;
     }
 
     public bool isFull(){
