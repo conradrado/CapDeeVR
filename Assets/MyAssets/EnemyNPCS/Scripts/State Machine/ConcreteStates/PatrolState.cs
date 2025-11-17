@@ -25,8 +25,10 @@ public class PatrolState : IEnemyState
 
         _patrolCenter = enemy.transform.position;
 
+        _anim.SetBool("IsIdle", false);
         _anim.SetBool("IsChasing", false);
         _anim.SetBool("IsWalking", true);
+        
 
 
         _agent.isStopped = false;
