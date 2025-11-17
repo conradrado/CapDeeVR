@@ -59,6 +59,7 @@
     <UnityVersion>6000.0.44f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
+    <Analyzer Include="C:\Users\KRD\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.3\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.44f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.44f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.44f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
@@ -66,9 +67,14 @@
   <ItemGroup>
     <Compile Include="Assets\Scripts\HandPose.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ChangeColor.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\Enemy\EnemyDataManager.cs" />
+    <Compile Include="Assets\Scripts\newHybridEnemyAI.cs" />
+    <Compile Include="Assets\_Creepy_Cat\_3D Scifi Kit Starter Kit_HD\_Scripts\Turn_Move.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ApplicationManager.cs" />
+    <Compile Include="Assets\MyAssets\HeallingItem\HealingObject.cs" />
     <Compile Include="Assets\Elevator.cs" />
     <Compile Include="Assets\Bullet FX Pack Trail, Fire, Energy\Sources\Scripts\Bullet.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\State Machine\ConcreteStates\IdleState.cs" />
     <Compile Include="Assets\Features\VRHands\Scripts\HandAnimator.cs" />
     <Compile Include="Assets\SimpleEnemyAI.cs" />
     <Compile Include="Assets\Bullet FX Pack Trail, Fire, Energy\Sources\Demo.cs" />
@@ -86,21 +92,27 @@
     <Compile Include="Assets\Scripts\MsgBox\DialogueManager.cs" />
     <Compile Include="Assets\FFOSBodySocketInventory\UltraLowPoly\FireBullet.cs" />
     <Compile Include="Assets\Scripts\UIAudio.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\Enemy\EnemyDetect.cs" />
     <Compile Include="Assets\VR_SafePrefab_UnityProjectStyle\Assets\SafePrefab\Scripts\SafeDoor.cs" />
     <Compile Include="Assets\Scripts\DeathManager.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\State Machine\ConcreteStates\ShootState.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\State Machine\ConcreteStates\PatrolState.cs" />
     <Compile Include="Assets\Scripts\BoxCollisionHandler.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\DragMe.cs" />
+    <Compile Include="Assets\Scripts\SimpleBullet.cs" />
     <Compile Include="Assets\waterDepth.cs" />
     <Compile Include="Assets\KeypadInput.cs" />
-    <Compile Include="Assets\MyAssets\HeallingItem\Scripts\HelaingObject.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ActiveStateToggler.cs" />
     <Compile Include="Assets\Scripts\BulletDamage.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\DragPanel.cs" />
     <Compile Include="Assets\LaserSight.cs" />
     <Compile Include="Assets\Samples\XR Hands\1.5.1\Gestures\Debug Tools\Scripts\XRFingerShapeDebugBar.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\State Machine\ConcreteStates\EnemyStateManager.cs" />
     <Compile Include="Assets\Features\VRHands\Scripts\Finger.cs" />
     <Compile Include="Assets\PlayerHitboxLogger.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\State Machine\ConcreteStates\ChaseState.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\PanelManager.cs" />
+    <Compile Include="Assets\Scripts\HybridEnemyAI.cs" />
     <Compile Include="Assets\Scripts\MsgBox\MsgTrigger.cs" />
     <Compile Include="Assets\SimpleSkeleton\script\SimpleSkeletonController.cs" />
     <Compile Include="Assets\SciFi Warehouse Kit\Demo\Scripts\PlayRandomSound.cs" />
@@ -108,15 +120,20 @@
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\GameStateManager.cs" />
     <Compile Include="Assets\SceneChanger.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\Enemy\SwordAttackEventRelay.cs" />
     <Compile Include="Assets\Scripts\DeathTrigger.cs" />
     <Compile Include="Assets\Samples\XR Hands\1.5.1\Gestures\Debug Tools\Scripts\XRAllFingerShapesDebugUI.cs" />
     <Compile Include="Assets\Scripts\SetOptionFromUI.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\State Machine\ConcreteStates\MeleeState.cs" />
     <Compile Include="Assets\SciFi Warehouse Kit\Demo\Scripts\MouseComponent.cs" />
     <Compile Include="Assets\MyAssets\Turret\Scripts\Turret.cs" />
     <Compile Include="Assets\Features\VRHands\Scripts\HandVisibilityToggle.cs" />
     <Compile Include="Assets\Samples\XR Hands\1.5.1\Gestures\Examples\Scripts\StaticHandGesture.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\ScriptableObject\EnemyData.cs" />
     <Compile Include="Assets\Scripts\HandData.cs" />
     <Compile Include="Assets\TutorialManager.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\Enemy\SwordAttack.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\Interfaces\IEnemyState.cs" />
     <Compile Include="Assets\Samples\XR Hands\1.5.1\Gestures\Debug Tools\Scripts\XRHandShapeDebugUI.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ShowSliderValue.cs" />
     <Compile Include="Assets\SciFi Warehouse Kit\Demo\Scripts\LightFlicker.cs" />
@@ -126,6 +143,7 @@
     <Compile Include="Assets\MyAssets\Objects\RootBox\BoxTrigger.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\TiltWindow.cs" />
     <Compile Include="Assets\Samples\XR Hands\1.5.1\Gestures\Debug Tools\Scripts\XRFingerShapeDebugUI.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\State Machine\ConcreteStates\DeathState.cs" />
     <Compile Include="Assets\IgniteCoders\Simple Water Shader\Resources\WaterReflection.cs" />
     <Compile Include="Assets\MyAssets\Weapon\Revolver Prefab\Scripts\Reload.cs" />
     <Compile Include="Assets\LidSnap.cs" />
@@ -144,20 +162,32 @@
   <ItemGroup>
     <None Include="Assets\TerrainSampleAssets\ThirdPartyNotices.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro.cginc" />
+    <None Include="Assets\EasyRoads3D\lib\DelaunayER.dll" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Overlay.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile-2-Pass.shader" />
     <None Include="Assets\AddOns\Mg3D_Food\Food_ReadMe.txt" />
+    <None Include="Assets\EasyRoads3D\SRP Support Packages\_Readme.txt" />
     <None Include="Assets\SciFi_Space_Soldier\Resources\Shaders\SpaceStation_PBR_Basic.shader" />
+    <None Include="Assets\EasyRoads3D\shaders\ER Road.shader" />
     <None Include="Assets\Bullet FX Pack Trail, Fire, Energy\readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap.shader" />
+    <None Include="Assets\EasyRoads3D\Resources\custom prefabs\_custom prefabs.txt" />
+    <None Include="Assets\EasyRoads3D\prefab meshes\_custom prefabs.txt" />
+    <None Include="Assets\EasyRoads3D\shaders\ER Road Transparency.shader" />
     <None Include="Assets\SimpleSkeleton\Readme_SimpleSkeleton.txt" />
     <None Include="Assets\Cyber Monsters 2\Standard_Two_Sided.shader" />
     <None Include="Assets\Bullet FX Pack Trail, Fire, Energy\Shaders\BulletTrail.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
+    <None Include="Assets\EasyRoads3D\Quick Start.txt" />
     <None Include="Assets\FREE Food Pack\Shaders\Food.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
+    <None Include="Assets\_Creepy_Cat\_3D Scifi Kit Starter Kit_HD\_Shaders\GlassTypeB.shader" />
+    <None Include="Assets\EasyRoads3D\lib\EasyRoads3Dv3.dll" />
+    <None Include="Assets\EasyRoads3D\_readme .txt" />
+    <None Include="Assets\_Creepy_Cat\Readme Help Sos Doc.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\SDFFunctions.hlsl" />
+    <None Include="Assets\EasyRoads3D\shaders\ER Surface.shader" />
     <None Include="Assets\Bullet FX Pack Trail, Fire, Energy\Shaders\BulletShader.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface.shader" />
     <None Include="Assets\TextMesh Pro\Sprites\EmojiOne Attribution.txt" />
@@ -168,8 +198,10 @@
     <None Include="Assets\Scripts\GradientSkybox.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Properties.cginc" />
     <None Include="Assets\Bullet FX Pack Trail, Fire, Energy\Shaders\FireSurface.shader" />
+    <None Include="Assets\EasyRoads3D\SRP Package Notes.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Surface.cginc" />
     <None Include="Assets\TextMesh Pro\Resources\LineBreaking Following Characters.txt" />
+    <None Include="Assets\EasyRoads3D\Resources\dynamic prefabs\dynamic prefabs.txt" />
     <None Include="Assets\Free Skyboxes - Space\Readme.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile Masking.shader" />
     <None Include="Assets\Blood decal pack\readme.txt" />
@@ -177,8 +209,10 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Bitmap-Mobile.shader" />
     <None Include="Assets\TextMesh Pro\Fonts\LiberationSans - OFL.txt" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Mobile.shader" />
+    <None Include="Assets\EasyRoads3D\prefab sources\_custom prefabs.txt" />
     <None Include="Assets\TerrainSampleAssets\ShaderGraphs\CustomFunctions\CustomLighting.hlsl" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_Sprite.shader" />
+    <None Include="Assets\EasyRoads3D\_Release Notes.txt" />
   </ItemGroup>
   <ItemGroup>
     <Reference Include="UnityEngine">
@@ -641,12 +675,20 @@
       <HintPath>C:\Program Files\Unity\Hub\Editor\6000.0.44f1\Editor\Data\Managed\UnityEngine\UnityEditor.XRModule.dll</HintPath>
       <Private>False</Private>
     </Reference>
+    <Reference Include="DelaunayER">
+      <HintPath>Assets\EasyRoads3D\lib\DelaunayER.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
     <Reference Include="Unity.Collections.LowLevel.ILSupport">
       <HintPath>Library\PackageCache\com.unity.collections@56bff8827a7e\Unity.Collections.LowLevel.ILSupport\Unity.Collections.LowLevel.ILSupport.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="nunit.framework">
       <HintPath>Library\PackageCache\com.unity.ext.nunit@031a54704bff\net40\unity-custom\nunit.framework.dll</HintPath>
+      <Private>False</Private>
+    </Reference>
+    <Reference Include="EasyRoads3Dv3">
+      <HintPath>Assets\EasyRoads3D\lib\EasyRoads3Dv3.dll</HintPath>
       <Private>False</Private>
     </Reference>
     <Reference Include="Unity.VisualScripting.Antlr3.Runtime">

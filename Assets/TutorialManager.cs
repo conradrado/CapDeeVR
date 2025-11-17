@@ -7,6 +7,9 @@ public class TutorialManager : MonoBehaviour
 {
     public static TutorialManager Instance;
 
+    [Header("XR References")]
+    public UnityEngine.XR.Interaction.Toolkit.Interactors.XRRayInteractor rightRay; // 튜토리얼 중 버튼 상호작용용
+
     [Header("Tutorial UI")]
     [SerializeField] private GameObject tutorialUIPanel;   // 튜토리얼 전체 UI 오브젝트
     [SerializeField] private TMP_Text tutorialText;         // 텍스트
@@ -34,6 +37,10 @@ public class TutorialManager : MonoBehaviour
 
         if (tutorialUIPanel != null)
             tutorialUIPanel.SetActive(false);
+
+        // 시작 시에는 XR Ray는 꺼둠 (튜토리얼 표시 시에만 켬)
+        if (rightRay)
+            rightRay.enabled = false;
     }
 
     IEnumerator DelayTime(){
@@ -73,7 +80,15 @@ public class TutorialManager : MonoBehaviour
         yield return new WaitForSecondsRealtime(1f);
 
         // 3. 타임스케일 정지
-        Time.timeScale = 0.1f;
+        // Game pause via GameStateManager (fallback to direct)
+        if (GameStateManager.Instance != null)
+            GameStateManager.Instance.Pause();
+        else
+            Time.timeScale = 0f;
+
+        // Enable right-hand ray for UI interaction during tutorial
+        if (rightRay)
+            rightRay.enabled = true;
     }
 
 
@@ -89,7 +104,16 @@ public class TutorialManager : MonoBehaviour
         // 페이드 아웃
         if (fadeCoroutine != null) StopCoroutine(fadeCoroutine);
         fadeCoroutine = StartCoroutine(FadeCanvasGroup(canvasGroup, 1f, 0f, fadeDuration, false));
-        Time.timeScale = 1f;
+
+        // Disable XR Ray after closing
+        if (rightRay)
+            rightRay.enabled = false;
+
+        // Resume game via GameStateManager
+        if (GameStateManager.Instance != null)
+            GameStateManager.Instance.Resume();
+        else
+            Time.timeScale = 1f;
     }
 
     /// <summary>
@@ -120,7 +144,7 @@ public class TutorialManager : MonoBehaviour
 
         while (time < duration)
         {
-            time += Time.deltaTime;
+            time += Time.unscaledDeltaTime;
             group.alpha = Mathf.Lerp(start, end, time / duration);
             yield return null;
         }

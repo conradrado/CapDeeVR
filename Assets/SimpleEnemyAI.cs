@@ -15,7 +15,12 @@ public class SimpleEnemyAI : MonoBehaviour
     NavMeshAgent agent;
     Animator anim;
 
+    [SerializeField] float attackCooldown = 1.0f; // 연속 공격 최소 간격
+    [SerializeField] float turnSpeed = 10f;       // 공격 시 회전 속도
+
     bool isDead = false;
+    bool isAttacking = false;
+    float nextAttackTime = 0f;
 
     void Start()
     {
@@ -25,6 +30,10 @@ public class SimpleEnemyAI : MonoBehaviour
         // targetEntity가 안 넣어져 있으면 자동 탐색
         if (targetEntity == null && player != null)
             targetEntity = player.GetComponent<TargetEntity>();
+
+        // 공격 범위에 안정적으로 진입하도록 정지 거리 보정
+        if (agent != null)
+            agent.stoppingDistance = Mathf.Max(agent.stoppingDistance, Mathf.Max(0.05f, attackRange * 0.8f));
     }
 
     void Update()
@@ -36,7 +45,6 @@ public class SimpleEnemyAI : MonoBehaviour
         // 🔹 플레이어 감지 전 (Idle)
         if (dist > detectRange)
         {
-            Debug.Log("플레이어 감지 해제");
             SetState(idle: true);
             return;
         }
@@ -44,7 +52,7 @@ public class SimpleEnemyAI : MonoBehaviour
         // 🔹 플레이어 감지 후 (Run)
         if (dist <= detectRange && dist > attackRange)
         {   
-            Debug.Log("플레이어 감지!! dist : " + dist + "detectRange : " + detectRange );
+
             agent.isStopped = false;
             agent.SetDestination(player.position);
             SetState(run: true);
@@ -55,8 +63,15 @@ public class SimpleEnemyAI : MonoBehaviour
         if (dist <= attackRange)
         {
             agent.isStopped = true;
-            SetState(attack: true);
-            Debug.Log("공격 애니메이션 재생?");
+            // 플레이어를 바라보도록 회전
+            FaceTarget();
+
+            // 이동/대기 플래그 해제해 공격 전이에 방해 없도록
+            anim.SetBool("Run", false);
+            anim.SetBool("IdleOne", false);
+
+            TryAttack();
+            return;
         }
     }
 
@@ -73,6 +88,35 @@ public class SimpleEnemyAI : MonoBehaviour
         anim.SetBool("Hit", attack);
 
         anim.SetBool("Dies", die);
+    }
+
+    void FaceTarget()
+    {
+        if (player == null) return;
+        Vector3 dir = (player.position - transform.position);
+        dir.y = 0f;
+        if (dir.sqrMagnitude < 0.0001f) return;
+        Quaternion targetRot = Quaternion.LookRotation(dir.normalized);
+        transform.rotation = Quaternion.Slerp(transform.rotation, targetRot, Time.deltaTime * turnSpeed);
+    }
+
+    void TryAttack()
+    {
+        if (isDead) return;
+        if (isAttacking) return;
+        if (Time.time < nextAttackTime) return;
+        StartCoroutine(AttackOnce());
+    }
+
+    System.Collections.IEnumerator AttackOnce()
+    {
+        isAttacking = true;
+        // Animator의 "Hit" bool을 짧게 펄스해서 전이를 확실히 유도
+        anim.SetBool("Hit", true);
+        yield return null; // 한 프레임 대기하여 파라미터 반영 보장
+        anim.SetBool("Hit", false);
+        nextAttackTime = Time.time + attackCooldown;
+        isAttacking = false;
     }
 
     public void Die()
@@ -94,7 +138,6 @@ public class SimpleEnemyAI : MonoBehaviour
         if (dist <= attackRange + 0.3f)
         {
             targetEntity.TakeDamage(attackDamage);
-            Debug.Log($"NPC가 플레이어에게 {attackDamage} 데미지를 입힘!");
         }
     }
 }

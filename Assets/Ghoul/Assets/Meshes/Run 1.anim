@@ -158920,7 +158920,7 @@ AnimationClip:
   m_HasMotionFloatCurves: 0
   m_Events:
   - time: 0.5672333
-    functionName: DealDamage
+    functionName: TakeDamage
     data: 
     objectReferenceParameter: {fileID: 0}
     floatParameter: 0
