@@ -1,0 +1,35 @@
+[33m7bf5d45[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mStateEnhancement[m[33m)[m HEAD@{0}: reset: moving to HEAD
+[33m7bf5d45[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mStateEnhancement[m[33m)[m HEAD@{1}: checkout: moving from StateEnhancement to main
+[33m7bf5d45[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mStateEnhancement[m[33m)[m HEAD@{2}: reset: moving to HEAD
+[33m7bf5d45[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mStateEnhancement[m[33m)[m HEAD@{3}: checkout: moving from main to StateEnhancement
+[33m7bf5d45[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mStateEnhancement[m[33m)[m HEAD@{4}: reset: moving to HEAD
+[33m7bf5d45[m[33m ([m[1;36mHEAD[m[33m -> [m[1;32mmain[m[33m, [m[1;31morigin/main[m[33m, [m[1;31morigin/HEAD[m[33m, [m[1;32mStateEnhancement[m[33m)[m HEAD@{5}: commit: Almost finished on finite state machine
+[33m626da8d[m HEAD@{6}: commit: Melee Finite State Machine Finished
+[33m004ca7a[m[33m ([m[1;31morigin/GameStateManagement[m[33m, [m[1;32mGameStateManagement[m[33m)[m HEAD@{7}: merge GameStateManagement: Fast-forward
+[33m81c015f[m HEAD@{8}: checkout: moving from GameStateManagement to main
+[33m004ca7a[m[33m ([m[1;31morigin/GameStateManagement[m[33m, [m[1;32mGameStateManagement[m[33m)[m HEAD@{9}: commit: 게임 상태 매니저를 만들었습니다.
+[33m81c015f[m HEAD@{10}: checkout: moving from main to GameStateManagement
+[33m81c015f[m HEAD@{11}: checkout: moving from GameStateManagement to main
+[33m81c015f[m HEAD@{12}: reset: moving to HEAD
+[33m81c015f[m HEAD@{13}: checkout: moving from main to GameStateManagement
+[33m81c015f[m HEAD@{14}: checkout: moving from TutorialWork to main
+[33m2bab466[m[33m ([m[1;31morigin/TutorialWork[m[33m, [m[1;32mTutorialWork[m[33m)[m HEAD@{15}: checkout: moving from main to TutorialWork
+[33m81c015f[m HEAD@{16}: commit: Game Over UI Finished.
+[33ma7716d1[m HEAD@{17}: commit (merge): Merge branch 'main' of https://github.com/conradrado/CapDeeVR
+[33mefc392a[m HEAD@{18}: commit: Adjusted Asset Directory Hierarchy
+[33m92cc016[m HEAD@{19}: commit: Shotgun Works!
+[33m060cde5[m HEAD@{20}: commit: Tutorial Stage almost done! Working on Shotgun
+[33m57a4f42[m HEAD@{21}: pull: Fast-forward
+[33m2bab466[m[33m ([m[1;31morigin/TutorialWork[m[33m, [m[1;32mTutorialWork[m[33m)[m HEAD@{22}: reset: moving to TutorialWork
+[33m1ce7311[m HEAD@{23}: checkout: moving from TutorialWork to main
+[33m2bab466[m[33m ([m[1;31morigin/TutorialWork[m[33m, [m[1;32mTutorialWork[m[33m)[m HEAD@{24}: reset: moving to HEAD
+[33m2bab466[m[33m ([m[1;31morigin/TutorialWork[m[33m, [m[1;32mTutorialWork[m[33m)[m HEAD@{25}: commit: SMOKE DONE
+[33m8f5dea1[m HEAD@{26}: checkout: moving from main to TutorialWork
+[33m1ce7311[m HEAD@{27}: commit: TutorialWork Committed
+[33m0b33458[m HEAD@{28}: commit (merge): Merge branch 'TutorialWork'
+[33m3a76af1[m HEAD@{29}: commit: UnityShaderCompiler log file included
+[33m3e7884e[m HEAD@{30}: checkout: moving from TutorialWork to main
+[33m8f5dea1[m HEAD@{31}: commit: Smoke Prefab done
+[33m7570b0f[m HEAD@{32}: commit: Poisonous Water Level is decorated (enhanced) a bit
+[33m3e7884e[m HEAD@{33}: checkout: moving from main to TutorialWork
+[33m3e7884e[m HEAD@{34}: clone: from https://github.com/conradrado/CapDeeVR

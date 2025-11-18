@@ -62,6 +62,10 @@ public class MeleeState : IEnemyState
 
     }
 
+    public void Death(EnemyStateManager enemy)
+    {
+        
+    }
     public void UpdateState(EnemyStateManager enemy)
     {
         if (_enemyDetect == null || _enemyData == null)
