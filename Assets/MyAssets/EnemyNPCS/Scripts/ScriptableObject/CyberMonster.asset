@@ -18,6 +18,6 @@ MonoBehaviour:
   Damage: 10
   PatrolSpeed: 1
   ChaseSpeed: 2
-  DetectRange: 8
+  DetectRange: 10
   AttackRange: 2
   AttackSpeed: 1
