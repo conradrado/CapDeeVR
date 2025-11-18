@@ -87,32 +87,7 @@ public class DeathState : IEnemyState
         if (_anim == null)
             return;
 
-        if (HasParameter("Die", AnimatorControllerParameterType.Trigger))
-        {
-            _anim.ResetTrigger("Die");
-            _anim.SetTrigger("Die");
-            return;
-        }
-
-        if (HasParameter("Death", AnimatorControllerParameterType.Trigger))
-        {
-            _anim.ResetTrigger("Death");
-            _anim.SetTrigger("Death");
-            return;
-        }
-
-        if (HasParameter("Die", AnimatorControllerParameterType.Bool))
-        {
-            _anim.SetBool("Die", true);
-            return;
-        }
-
-        if (HasParameter("Death", AnimatorControllerParameterType.Bool))
-        {
-            _anim.SetBool("Death", true);
-            return;
-        }
-
+        _anim.SetBool("IsDead", true);
         _anim.Play("Death", 0, 0f); // Fallback to a plainly named state if parameters are missing.
     }
 

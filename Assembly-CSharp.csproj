@@ -75,6 +75,7 @@
     <Compile Include="Assets\Elevator.cs" />
     <Compile Include="Assets\Bullet FX Pack Trail, Fire, Energy\Sources\Scripts\Bullet.cs" />
     <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\State Machine\ConcreteStates\IdleState.cs" />
+    <Compile Include="Assets\MyAssets\Effects\HPBar\PlayerStat.cs" />
     <Compile Include="Assets\Features\VRHands\Scripts\HandAnimator.cs" />
     <Compile Include="Assets\SimpleEnemyAI.cs" />
     <Compile Include="Assets\Bullet FX Pack Trail, Fire, Energy\Sources\Demo.cs" />
@@ -82,6 +83,7 @@
     <Compile Include="Assets\PumpSlide.cs" />
     <Compile Include="Assets\MyAssets\Effects\HPBar\DamageScript.cs" />
     <Compile Include="Assets\Scripts\AudioManager.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\Enemy\EnemyStat.cs" />
     <Compile Include="Assets\Bullet FX Pack Trail, Fire, Energy\Sources\Scripts\Cylinder.cs" />
     <Compile Include="Assets\Ghoul\Assets\Scripts\AnkleGrabberExample.cs" />
     <Compile Include="Assets\XRLoadScene.cs" />
@@ -116,6 +118,7 @@
     <Compile Include="Assets\Scripts\MsgBox\MsgTrigger.cs" />
     <Compile Include="Assets\SimpleSkeleton\script\SimpleSkeletonController.cs" />
     <Compile Include="Assets\SciFi Warehouse Kit\Demo\Scripts\PlayRandomSound.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\Enemy\StatBehaviour.cs" />
     <Compile Include="Assets\ShotgunController.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\GameStateManager.cs" />

@@ -10,7 +10,7 @@ public class SwordAttack : MonoBehaviour
     BoxCollider _hitbox;
     EnemyDetect _enemyDetect;
     EnemyDataManager _dataManager;
-    TargetEntity _cachedTarget;
+    PlayerStat _cachedTarget;
 
     void Awake()
     {
@@ -26,10 +26,10 @@ public class SwordAttack : MonoBehaviour
 
     void Start()
     {
-        CacheTargetEntity();
+        CachePlayerStat();
     }
 
-    public void CacheTargetEntity()
+    public void CachePlayerStat()
     {
         if (_cachedTarget != null)
             return;
@@ -57,10 +57,10 @@ public class SwordAttack : MonoBehaviour
     /// </summary>
     public void OnSwordHitEvent()
     {
-        CacheTargetEntity();
+        CachePlayerStat();
         if (_cachedTarget == null)
         {
-            Debug.LogWarning("[SwordAttack] TargetEntity missing, cannot apply damage.", this);
+            Debug.LogWarning("[SwordAttack] PlayerStat missing, cannot apply damage.", this);
             return;
         }
 
@@ -75,7 +75,7 @@ public class SwordAttack : MonoBehaviour
         target.TakeDamage(ResolveDamage());
     }
 
-    bool TryHitTarget(out TargetEntity hitTarget)
+    bool TryHitTarget(out PlayerStat hitTarget)
     {
         hitTarget = null;
         if (_hitbox == null)
@@ -88,7 +88,7 @@ public class SwordAttack : MonoBehaviour
         var hits = Physics.OverlapBox(center, halfExtents, orientation, _targetLayers, QueryTriggerInteraction.Ignore);
         foreach (var hit in hits)
         {
-            if (!hit.TryGetComponent(out TargetEntity target))
+            if (!hit.TryGetComponent(out PlayerStat target))
                 continue;
 
             if (_cachedTarget != null && hit.transform != _cachedTarget.transform)

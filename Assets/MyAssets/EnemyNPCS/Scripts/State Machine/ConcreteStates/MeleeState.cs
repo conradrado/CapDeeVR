@@ -8,6 +8,8 @@ public class MeleeState : IEnemyState
     NavMeshAgent _agent;
     EnemyDetect _enemyDetect;
     EnemyData _enemyData;
+
+    
     float _attackTimer;
 
     public void EnterState(EnemyStateManager enemy)
@@ -62,10 +64,6 @@ public class MeleeState : IEnemyState
 
     }
 
-    public void Death(EnemyStateManager enemy)
-    {
-        
-    }
     public void UpdateState(EnemyStateManager enemy)
     {
         if (_enemyDetect == null || _enemyData == null)
