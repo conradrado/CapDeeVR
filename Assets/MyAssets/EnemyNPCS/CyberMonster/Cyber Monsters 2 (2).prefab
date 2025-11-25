@@ -6635,6 +6635,7 @@ GameObject:
   - component: {fileID: 6265543673636572137}
   - component: {fileID: 1603355462092916616}
   - component: {fileID: 8463700792746312899}
+  - component: {fileID: -7667593696093382598}
   m_Layer: 0
   m_Name: Cyber Monsters 2 (2)
   m_TagString: Player
@@ -6794,6 +6795,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _healthbarSprite: {fileID: 558151055099716054}
+--- !u!114 &-7667593696093382598
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7552049112901598555}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3126791659bccd646b512ba5a9468d64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHP: 50
+  CurrentHP: 50
+  _enemyDataMgr: {fileID: 3259655172149697945}
+  _enemyData: {fileID: 11400000, guid: 0b1b1bbe10a5092459520ed7a4899547, type: 2}
+  _hpBar: {fileID: 8463700792746312899}
+  _audioSource: {fileID: 0}
+  _healSound: {fileID: 0}
 --- !u!1 &7559855562057035697
 GameObject:
   m_ObjectHideFlags: 0

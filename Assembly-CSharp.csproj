@@ -59,7 +59,7 @@
     <UnityVersion>6000.0.44f1</UnityVersion>
   </PropertyGroup>
   <ItemGroup>
-    <Analyzer Include="C:\Users\KRD\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.1.3\Analyzers\Microsoft.Unity.Analyzers.dll" />
+    <Analyzer Include="C:\Users\KRD\.vscode\extensions\visualstudiotoolsforunity.vstuc-1.2.0\Analyzers\Microsoft.Unity.Analyzers.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.44f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.SourceGenerators.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.44f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.Properties.SourceGenerator.dll" />
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.44f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
@@ -133,6 +133,7 @@
     <Compile Include="Assets\Scripts\SetOptionFromUI.cs" />
     <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\State Machine\ConcreteStates\MeleeState.cs" />
     <Compile Include="Assets\SciFi Warehouse Kit\Demo\Scripts\MouseComponent.cs" />
+    <Compile Include="Assets\VerticalDoor.cs" />
     <Compile Include="Assets\MyAssets\Turret\Scripts\Turret.cs" />
     <Compile Include="Assets\Features\VRHands\Scripts\HandVisibilityToggle.cs" />
     <Compile Include="Assets\Samples\XR Hands\1.5.1\Gestures\Examples\Scripts\StaticHandGesture.cs" />
@@ -188,6 +189,7 @@
     <None Include="Assets\TextMesh Pro\Shaders\TMPro_Mobile.cginc" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF SSD.shader" />
     <None Include="Assets\EasyRoads3D\Quick Start.txt" />
+    <None Include="Assets\Same Gev Dudios\Sci-Fi Robots Bundle\ReadMe.txt" />
     <None Include="Assets\FREE Food Pack\Shaders\Food.shader" />
     <None Include="Assets\TextMesh Pro\Shaders\TMP_SDF-Surface-Mobile.shader" />
     <None Include="Assets\_Creepy_Cat\_3D Scifi Kit Starter Kit_HD\_Shaders\GlassTypeB.shader" />

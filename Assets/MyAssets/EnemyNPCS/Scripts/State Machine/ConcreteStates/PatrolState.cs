@@ -12,6 +12,9 @@ public class PatrolState : IEnemyState
     Animator _anim;
     Vector3 _patrolCenter;
     EnemyDetect _enemyDetect;
+    EnemyDataManager _enemyDataMgr;
+    EnemyData _enemyData;
+    bool _isRangedOnly;
     float _patrolRadius = 10f;
 
 
@@ -22,6 +25,9 @@ public class PatrolState : IEnemyState
     {
         _anim = enemy.GetComponent<Animator>();
         _agent = enemy.GetComponent<NavMeshAgent>();
+        _enemyDataMgr = enemy.GetComponent<EnemyDataManager>();
+        _enemyData = _enemyDataMgr != null ? _enemyDataMgr._enemyData : null;
+        _isRangedOnly = _enemyData != null && _enemyData.IsRangedOnly;
 
         _patrolCenter = enemy.transform.position;
 
@@ -73,7 +79,7 @@ public class PatrolState : IEnemyState
 
         if (_enemyDetect.IsPlayerInDetectRange())
         {
-            enemy.TransitionToState(new ChaseState());
+            enemy.TransitionToState(_isRangedOnly ? new ShootState() : new ChaseState());
         }
 
 

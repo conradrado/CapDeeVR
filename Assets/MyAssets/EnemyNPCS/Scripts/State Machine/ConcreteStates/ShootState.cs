@@ -18,6 +18,7 @@ public class ShootState : IEnemyState
     NavMeshAgent _agent;
     EnemyDetect _enemyDetect;
     EnemyData _enemyData;
+    bool _isRangedOnly;
 
     Transform _target;
     TargetEntity _targetEntity;
@@ -45,6 +46,7 @@ public class ShootState : IEnemyState
 
         var dataManager = enemy.GetComponent<EnemyDataManager>();
         _enemyData = dataManager != null ? dataManager._enemyData : null;
+        _isRangedOnly = _enemyData != null && _enemyData.IsRangedOnly;
 
         _target = _enemyDetect != null ? _enemyDetect.Target : null;
         if (_target != null)
@@ -88,14 +90,25 @@ public class ShootState : IEnemyState
         var targetPos = _target.position;
         float distance = Vector3.Distance(self.position, targetPos);
 
-        if (distance <= _meleeSwitchRange)
+        bool inDetect = _enemyDetect != null && _enemyDetect.IsPlayerInDetectRange();
+        bool withinShootRange = distance <= _shootRange;
+
+        if (_isRangedOnly)
+        {
+            if (!inDetect || !withinShootRange)
+            {
+                enemy.TransitionToState(new PatrolState());
+                return;
+            }
+        }
+        else if (distance <= _meleeSwitchRange)
         {
             enemy.TransitionToState(new MeleeState());
             return;
         }
 
-        bool withinShoot = distance <= _chaseSwitchRange && _enemyDetect != null && _enemyDetect.IsPlayerInDetectRange();
-        if (!withinShoot)
+        bool withinShoot = distance <= _chaseSwitchRange && inDetect;
+        if (!_isRangedOnly && !withinShoot)
         {
             enemy.TransitionToState(new ChaseState());
             return;
@@ -111,7 +124,7 @@ public class ShootState : IEnemyState
             _loseSightTimer += Time.deltaTime;
             if (_loseSightTimer >= LoseSightGrace)
             {
-                enemy.TransitionToState(new ChaseState());
+                enemy.TransitionToState(_isRangedOnly ? new PatrolState() : new ChaseState());
                 return;
             }
         }

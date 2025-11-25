@@ -3697,7 +3697,6 @@ GameObject:
   - component: {fileID: 7726587067050202654}
   - component: {fileID: 9061637985109056067}
   - component: {fileID: 1751687133224328283}
-  - component: {fileID: 4863660883524777312}
   - component: {fileID: 7434077301029153488}
   - component: {fileID: 4821249962087458691}
   - component: {fileID: 6713963721455607473}
@@ -3705,6 +3704,7 @@ GameObject:
   - component: {fileID: 6288235194091671000}
   - component: {fileID: 8207325505404826467}
   - component: {fileID: 7817585079210830639}
+  - component: {fileID: -2399867079285997221}
   m_Layer: 0
   m_Name: AnkleGrabber (5)
   m_TagString: Untagged
@@ -3764,28 +3764,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 30b1fcefa24c44f4c990273be53bf761, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!114 &4863660883524777312
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4937354695612875684}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c47b26867015d2a4ab5e63e14a607999, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxHP: 120
-  hpBar: {fileID: 7434077301029153488}
-  isPlayer: 0
-  audioSource: {fileID: 0}
-  healSound: {fileID: 0}
-  deathManager: {fileID: 0}
-  damageVolume: {fileID: 0}
-  normalProfile: {fileID: 0}
-  damageProfile: {fileID: 0}
-  damageFXDuration: 0.4
 --- !u!114 &7434077301029153488
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3894,6 +3872,25 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _swordAttack: {fileID: 8388883707240380475}
+--- !u!114 &-2399867079285997221
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4937354695612875684}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3126791659bccd646b512ba5a9468d64, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MaxHP: 25
+  CurrentHP: 25
+  _enemyDataMgr: {fileID: 6288235194091671000}
+  _enemyData: {fileID: 11400000, guid: bf33563093bcdbd499a36b976124f328, type: 2}
+  _hpBar: {fileID: 7434077301029153488}
+  _audioSource: {fileID: 0}
+  _healSound: {fileID: 0}
 --- !u!1 &4944434537654832347
 GameObject:
   m_ObjectHideFlags: 0

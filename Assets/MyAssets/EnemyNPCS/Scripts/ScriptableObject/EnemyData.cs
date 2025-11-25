@@ -20,5 +20,8 @@ public class EnemyData : ScriptableObject
     public float AttackRange = 2f;
 
     public float AttackSpeed = 4f;
+
+    // If true, this enemy should never use melee and should rely on ranged attacks.
+    public bool IsRangedOnly = false;
     
 }
