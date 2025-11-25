@@ -6,10 +6,16 @@ public class BulletDamage : MonoBehaviour
     [SerializeField] private float damage = 25f;
     [SerializeField] private float lifeTime = 3f;
 
+    /*
+    private void Start()
+    {
+        Destroy(gameObject, lifeTime); // 총알이 일정 시간 지나면 사라짐
+    }*/
     
     /// 충돌 시 실행되는 함수
     private void OnCollisionEnter(Collision collision)
 {
+    Debug.Log("총알 충돌!");
     // 'collision'은 이 총알(bullet)이 부딪힌 상대방과 관련된 충돌 정보이다.
     // 'collision.gameObject'는 충돌한 상대 오브젝트를 가리킨다.
 
@@ -25,7 +31,7 @@ public class BulletDamage : MonoBehaviour
     }
 
     // 총알은 한 번 충돌하면 사라진다.
-    Destroy(gameObject, lifeTime);
+    Destroy(gameObject);
 }
 
 }

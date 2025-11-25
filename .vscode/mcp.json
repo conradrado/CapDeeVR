@@ -1,0 +1,10 @@
+{
+  "mcpServers": {
+    "mcp-unity": {
+      "command": "node",
+      "args": [
+        "D:/CapdeeBranch/CapDeeVR/Library/PackageCache/com.gamelovers.mcp-unity@0d4643656803/Server~/build/index.js"
+      ]
+    }
+  }
+}

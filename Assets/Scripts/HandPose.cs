@@ -53,6 +53,7 @@ public class HandPose : MonoBehaviour
         else{
             interactorData.animator.enabled = false;
         }
+           
 
         Debug.Log("Model Type: " + interactorData.modelType);
 
@@ -69,6 +70,8 @@ public class HandPose : MonoBehaviour
             Debug.Log("RightHand On");
             rightHandPose.gameObject.SetActive(true);
         }
+
+
         /*if(arg.interactorObject is UnityEngine.XR.Interaction.Toolkit.Interactors.XRDirectInteractor){
             Debug.Log("Yay ");
             HandData handData = arg.interactorObject.transform.GetComponentInChildren<HandData>(); // 현재 쥐고 있는 손의 정보를 가져와서 handData에 할당함.
