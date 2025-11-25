@@ -10,7 +10,8 @@ public class SwordAttack : MonoBehaviour
     BoxCollider _hitbox;
     EnemyDetect _enemyDetect;
     EnemyDataManager _dataManager;
-    PlayerStat _cachedTarget;
+    IDamageable _cachedTarget;
+    Transform _cachedTransform;
 
     void Awake()
     {
@@ -31,11 +32,12 @@ public class SwordAttack : MonoBehaviour
 
     public void CachePlayerStat()
     {
-        if (_cachedTarget != null)
-            return;
+        _cachedTarget = null;
+        _cachedTransform = null;
 
         if (_enemyDetect != null && _enemyDetect.Target != null)
         {
+            _cachedTransform = _enemyDetect.Target;
             _enemyDetect.Target.TryGetComponent(out _cachedTarget);
         }
 
@@ -43,7 +45,10 @@ public class SwordAttack : MonoBehaviour
         {
             var player = GameObject.FindWithTag("Player");
             if (player != null)
+            {
+                _cachedTransform = player.transform;
                 player.TryGetComponent(out _cachedTarget);
+            }
         }
     }
 
@@ -60,13 +65,13 @@ public class SwordAttack : MonoBehaviour
         CachePlayerStat();
         if (_cachedTarget == null)
         {
-            Debug.LogWarning("[SwordAttack] PlayerStat missing, cannot apply damage.", this);
+            Debug.LogWarning("[SwordAttack] No damageable target cached, cannot apply damage.", this);
             return;
         }
 
         if (!TryHitTarget(out var target))
         {
-            if (_enemyDetect == null || !_enemyDetect.IsPlayerInAttackRange())
+            if (_enemyDetect == null || !_enemyDetect.IsCurrentTargetInAttackRange())
                 return;
 
             target = _cachedTarget;
@@ -75,7 +80,7 @@ public class SwordAttack : MonoBehaviour
         target.TakeDamage(ResolveDamage());
     }
 
-    bool TryHitTarget(out PlayerStat hitTarget)
+    bool TryHitTarget(out IDamageable hitTarget)
     {
         hitTarget = null;
         if (_hitbox == null)
@@ -88,10 +93,10 @@ public class SwordAttack : MonoBehaviour
         var hits = Physics.OverlapBox(center, halfExtents, orientation, _targetLayers, QueryTriggerInteraction.Ignore);
         foreach (var hit in hits)
         {
-            if (!hit.TryGetComponent(out PlayerStat target))
+            if (!hit.TryGetComponent(out IDamageable target))
                 continue;
 
-            if (_cachedTarget != null && hit.transform != _cachedTarget.transform)
+            if (_cachedTransform != null && hit.transform != _cachedTransform)
                 continue;
 
             hitTarget = target;

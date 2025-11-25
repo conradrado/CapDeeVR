@@ -75,7 +75,15 @@ public class MeleeState : IEnemyState
         float attackSpeed = Mathf.Max(0.01f, _enemyData.AttackSpeed);
 
 
-        if (_enemyDetect.IsPlayerInAttackRange())
+        _enemyDetect.RefreshTarget();
+
+        if (!_enemyDetect.HasTarget)
+        {
+            enemy.TransitionToState(new PatrolState());
+            return;
+        }
+
+        if (_enemyDetect.IsCurrentTargetInAttackRange())
         {
 
             Debug.Log("[Melee State] : Player is in melee range");
@@ -92,7 +100,7 @@ public class MeleeState : IEnemyState
             
             
         }
-        else if (_enemyDetect.IsPlayerInDetectRange())
+        else if (_enemyDetect.HasTarget)
         {
             _attackTimer = attackSpeed;
             if (_anim != null)

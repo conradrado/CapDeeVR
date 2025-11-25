@@ -11,15 +11,15 @@ public class ChaseState : IEnemyState
     bool _isRangedOnly;
 
     // Tuning
-    float _loseSightGrace = 0.75f; // 감시를 잃은 후 유지 시간
-    float _loseTimer = 0f;
-    float _keepDistance = 1.5f;    // 목표와의 최소 간격
-    float _tol = 0.1f;             // 근접 판정 여유
+    float _loseSightGrace = 0.75f;
+    float _loseTimer = 0f; 
+    float _keepDistance = 1.5f;
+    float _tol = 0.1f;
 
     // Repath control
-    Vector3 _lastDest;
-    float _repathCooldown = 0.15f; // 6~10Hz 빈도로만 경로 요청
-    float _repathTimer = 0f; // 경로 계산 타이머
+    Vector3 _lastDest; 
+    float _repathCooldown = 0.15f;
+    float _repathTimer = 0f;
 
     public void EnterState(EnemyStateManager enemy)
     {
@@ -38,13 +38,13 @@ public class ChaseState : IEnemyState
             _agent.enabled = true;
             _agent.isStopped = false;
             _agent.speed = _enemyData != null ? _enemyData.ChaseSpeed : _agent.speed;
-            _agent.updatePosition = true;
+            _agent.updatePosition = true; 
             _agent.updateRotation = true;
             _agent.stoppingDistance = _keepDistance;
             _agent.angularSpeed = Mathf.Max(_agent.angularSpeed, 120f);
             _agent.acceleration = Mathf.Max(_agent.acceleration, 8f);
             _agent.autoRepath = true;
-            _agent.autoBraking = false;
+            _agent.autoBraking = false; 
         }
 
         if (_anim != null)
@@ -72,39 +72,41 @@ public class ChaseState : IEnemyState
             enemy.TransitionToState(new PatrolState());
             return;
         }
-        if (_enemyDetect == null || _enemyDetect.Target == null)
+        if (_enemyDetect == null)
         {
             enemy.TransitionToState(new PatrolState());
             return;
         }
 
+        _enemyDetect.RefreshTarget();
+        var target = _enemyDetect.Target;
+        if (!_enemyDetect.HasTarget || target == null)
+        {
+            enemy.TransitionToState(new PatrolState());
+            return;
+        }
+
+        // Ranged-only: hold position and switch to shoot when target spotted.
         if (_isRangedOnly)
         {
-            if (_enemyDetect.IsPlayerInDetectRange())
-            {
-                _agent.isStopped = true;
-                _agent.ResetPath();
-                enemy.TransitionToState(new ShootState());
-            }
-            else
-            {
-                enemy.TransitionToState(new PatrolState());
-            }
+            _agent.isStopped = true;
+            _agent.ResetPath();
+            enemy.TransitionToState(new ShootState());
             return;
         }
 
         _repathTimer -= Time.deltaTime;
 
-        var targetPos = _enemyDetect.Target.position;
+        var targetPos = target.position;
 
-        // NavMesh 위의 유효 목적지 추출
+        // Snap target to NavMesh if possible
         if (NavMesh.SamplePosition(targetPos, out var hit, 2f, _agent.areaMask))
             targetPos = hit.position;
 
         var selfPos = enemy.transform.position;
         float dist = Vector3.Distance(selfPos, targetPos);
 
-        if (_enemyDetect.IsPlayerInDetectRange())
+        if (_enemyDetect.HasTarget)
         {
             _loseTimer = 0f;
 
@@ -160,9 +162,9 @@ public class ChaseState : IEnemyState
             }
         }
 
-        if (_enemyDetect.IsPlayerInAttackRange())
+        if (_enemyDetect.IsCurrentTargetInAttackRange())
         {
-            enemy.TransitionToState(_isRangedOnly ? new ShootState() : new MeleeState());
+            enemy.TransitionToState(new MeleeState());
         }
     }
 }

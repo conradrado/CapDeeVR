@@ -1,7 +1,7 @@
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class TargetEntity : MonoBehaviour
+public class TargetEntity : MonoBehaviour, IDamageable
 {
 
     [Header("스탯")]

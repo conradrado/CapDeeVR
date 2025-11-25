@@ -123,6 +123,8 @@
     <Compile Include="Assets\SciFi Warehouse Kit\Demo\Scripts\PlayRandomSound.cs" />
     <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\Enemy\StatBehaviour.cs" />
     <Compile Include="Assets\ShotgunController.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\Enemy\IDamageable.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\Enemy\GuardObjectHealth.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Readme.cs" />
     <Compile Include="Assets\Scripts\GameStateManager.cs" />
     <Compile Include="Assets\MyAssets\Objects\Upgrade\Script\UCrateOpen.cs" />

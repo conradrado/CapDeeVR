@@ -21,7 +21,7 @@ public class ShootState : IEnemyState
     bool _isRangedOnly;
 
     Transform _target;
-    TargetEntity _targetEntity;
+    IDamageable _damageableTarget;
     Transform _aimOrigin;
     IEnemyRangedShooter _customShooter;
 
@@ -48,9 +48,9 @@ public class ShootState : IEnemyState
         _enemyData = dataManager != null ? dataManager._enemyData : null;
         _isRangedOnly = _enemyData != null && _enemyData.IsRangedOnly;
 
-        _target = _enemyDetect != null ? _enemyDetect.Target : null;
+        RefreshTarget();
         if (_target != null)
-            _target.TryGetComponent(out _targetEntity);
+            _target.TryGetComponent(out _damageableTarget);
 
         _shootCooldown = ResolveShootCooldown();
         _shootTimer = 0f;
@@ -80,6 +80,7 @@ public class ShootState : IEnemyState
 
     public void UpdateState(EnemyStateManager enemy)
     {
+        RefreshTarget();
         if (!HasValidTarget())
         {
             enemy.TransitionToState(new PatrolState());
@@ -90,7 +91,7 @@ public class ShootState : IEnemyState
         var targetPos = _target.position;
         float distance = Vector3.Distance(self.position, targetPos);
 
-        bool inDetect = _enemyDetect != null && _enemyDetect.IsPlayerInDetectRange();
+        bool inDetect = _enemyDetect != null && _enemyDetect.HasTarget;
         bool withinShootRange = distance <= _shootRange;
 
         if (_isRangedOnly)
@@ -165,22 +166,7 @@ public class ShootState : IEnemyState
 
     bool HasValidTarget()
     {
-        if (_enemyDetect == null)
-            return false;
-
-        if (_enemyDetect.Target != null && _enemyDetect.Target != _target)
-        {
-            _target = _enemyDetect.Target;
-            _target.TryGetComponent(out _targetEntity);
-        }
-
-        if (_target == null)
-            return false;
-
-        if (_targetEntity == null)
-            _target.TryGetComponent(out _targetEntity);
-
-        return true;
+        return _target != null && _damageableTarget != null;
     }
 
     void StopAgentForShooting()
@@ -298,16 +284,10 @@ public class ShootState : IEnemyState
 
     void ApplyHitscanDamage(float damage)
     {
-        if (_targetEntity == null)
-        {
-            if (_target != null)
-                _target.TryGetComponent(out _targetEntity);
-        }
-
-        if (_targetEntity == null)
+        if (_damageableTarget == null)
             return;
 
-        _targetEntity.TakeDamage(damage);
+        _damageableTarget.TakeDamage(damage);
     }
 
     float ResolveDamage()
@@ -360,6 +340,18 @@ public class ShootState : IEnemyState
                 return;
             }
         }
+    }
+
+    void RefreshTarget()
+    {
+        if (_enemyDetect == null)
+            return;
+
+        _enemyDetect.RefreshTarget();
+        _target = _enemyDetect.Target;
+        _damageableTarget = null;
+        if (_target != null)
+            _target.TryGetComponent(out _damageableTarget);
     }
 }
 
