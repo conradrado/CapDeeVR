@@ -11,8 +11,14 @@ public class GuardObjectHealth : MonoBehaviour, IDamageable
     void Awake()
     {
         _current = maxHP;
+        if (hpBar == null)
+            hpBar = GetComponentInChildren<HPBar>();
+
         if (hpBar != null)
+        {
             hpBar.SetMaxHP(maxHP);
+            hpBar.SetHP(maxHP, _current);
+        }
     }
 
     public void TakeDamage(float amount)

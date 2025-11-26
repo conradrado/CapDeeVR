@@ -12,6 +12,7 @@ public class PatrolState : IEnemyState
     EnemyData _enemyData;
     bool _isRangedOnly;
     float _patrolRadius = 10f;
+    float _defendHoldRadius = 2.5f;
 
     float _moveTime = 0f;
     float _moveTimer = 0f;
@@ -20,11 +21,13 @@ public class PatrolState : IEnemyState
     {
         _anim = enemy.GetComponent<Animator>();
         _agent = enemy.GetComponent<NavMeshAgent>();
+        _enemyDetect = enemy.GetComponent<EnemyDetect>();
         _enemyDataMgr = enemy.GetComponent<EnemyDataManager>();
         _enemyData = _enemyDataMgr != null ? _enemyDataMgr._enemyData : null;
         _isRangedOnly = _enemyData != null && _enemyData.IsRangedOnly;
 
-        _patrolCenter = enemy.transform.position;
+        var defend = _enemyDetect != null ? _enemyDetect.DefendObject : null;
+        _patrolCenter = defend != null ? defend.position : enemy.transform.position;
 
         if (_anim != null)
         {
@@ -38,8 +41,6 @@ public class PatrolState : IEnemyState
             _agent.isStopped = false;
             _agent.autoBraking = true;
         }
-
-        _enemyDetect = enemy.GetComponent<EnemyDetect>();
     }   
 
     public void ExitState(EnemyStateManager enemy)
@@ -55,6 +56,21 @@ public class PatrolState : IEnemyState
     public void UpdateState(EnemyStateManager enemy)
     {
         _enemyDetect.RefreshTarget();
+
+        if (_enemyDetect != null && !_enemyDetect.HasTarget && _enemyDetect.DefendObject != null && _agent != null)
+        {
+            var defendPos = _enemyDetect.DefendObject.position;
+            float dist = Vector3.Distance(enemy.transform.position, defendPos);
+            _patrolCenter = defendPos;
+            if (dist > _defendHoldRadius)
+            {
+                _agent.isStopped = false;
+                _agent.SetDestination(defendPos);
+                if (_anim != null)
+                    _anim.SetFloat("Speed", _agent.velocity.magnitude);
+                return;
+            }
+        }
 
         if (_anim != null && _agent != null)
             _anim.SetFloat("Speed", _agent.velocity.magnitude);

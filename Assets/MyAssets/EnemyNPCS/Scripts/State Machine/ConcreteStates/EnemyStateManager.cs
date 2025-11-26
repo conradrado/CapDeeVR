@@ -11,7 +11,7 @@ public class EnemyStateManager : MonoBehaviour {
 
     void Start()
     {
-        TransitionToState(new IdleState());
+        TransitionToState(new PatrolState());
     }
 
     void Update()

@@ -12,6 +12,13 @@ public class EnemyDetect : MonoBehaviour
     public Transform Target => _currentTarget;
     public TargetType CurrentTargetType { get; private set; } = TargetType.None;
     public bool HasTarget => _currentTarget != null && CurrentTargetType != TargetType.None;
+    public Transform DefendObject => _defendObject;
+
+    public void SetDefendObject(Transform defendTarget)
+    {
+        _defendObject = defendTarget;
+        RefreshTarget();
+    }
 
     Transform _currentTarget;
 
