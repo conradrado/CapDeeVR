@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tutorial 1.unity
     guid: c4480f5a336f9af48a4be2d5972b65cb
   - enabled: 0
@@ -20,6 +20,12 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ghfkl.unity
     guid: f3dc1863d7e956c41b7103ec63ec22ad
+  - enabled: 1
+    path: Assets/Scenes/Puzzle_map/Puzzle.unity
+    guid: b42ca4c5c936383429d2318c931f7ad2
+  - enabled: 1
+    path: Assets/RushHour/demo_scean/Rush Hour.unity
+    guid: 270e8f140492b3e48b25476a8044e7ea
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 1ee1d409476bfbd4783c9f09ebde3196, type: 2}
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 6890b46bf6f7fc84b93cdd8b136a3821, type: 2}
