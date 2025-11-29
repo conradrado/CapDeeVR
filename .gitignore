@@ -69,3 +69,4 @@ UserSettings/Layouts/*.dwlt
 
 # 기타
 .utmp/
+*.exr

@@ -54,6 +54,6 @@ public class WaveUIController : MonoBehaviour
     void OnAliveChanged(int count)
     {
         if (aliveText != null)
-            aliveText.text = $"남은 적: {count}";
+            aliveText.text = $"Remaining : {count}";
     }
 }

@@ -7018,7 +7018,6 @@ GameObject:
   - component: {fileID: 5065747368433740822}
   - component: {fileID: 686827114636919439}
   - component: {fileID: 133770072272490333}
-  - component: {fileID: 5687178607236929447}
   - component: {fileID: 7706992145644789025}
   - component: {fileID: 5688373436393913366}
   - component: {fileID: 4997141016057573336}
@@ -7229,29 +7228,6 @@ MonoBehaviour:
   m_StartingMultipleGrabTransformers: []
   m_AddDefaultGrabTransformers: 1
   m_FarAttachMode: 0
---- !u!114 &5687178607236929447
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4234643587566968031}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9bb347dd0cec8654e8e4a8662b0fe40e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  bulletPrefab: {fileID: 3414539091884870302}
-  firePoint: {fileID: 3394049445854845033}
-  bulletForce: 20
-  maxAmmo: 6
-  ammoHud: {fileID: 1761632299861470934}
-  gunAnimator: {fileID: 5065747368433740822}
-  fireSFX: {fileID: 5688373436393913366}
-  gunShotClip: {fileID: 8300000, guid: 71d2196132fee3d408369ae6f38101c7, type: 3}
-  gunSpin: {fileID: 8300000, guid: f53abce0fff0c7c4e8ceb69f6b78cebf, type: 3}
-  muzzleFlame: {fileID: 5194841485813772378}
-  muzzleParticle: {fileID: 1856074587638685634}
 --- !u!114 &7706992145644789025
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -7499,7 +7475,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9207055d8c0ab7f47a93f14a32c7fb94, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunFire: {fileID: 5687178607236929447}
+  gunFire: {fileID: 0}
   cylinderToEject: {fileID: 2850849519399522424}
   cylinderAudioSource: {fileID: 5688373436393913366}
   cylinderAudioClip: {fileID: 8300000, guid: 6154e6ac80a6ee84f8f8de3183de5147, type: 3}
@@ -7517,7 +7493,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   socket: {fileID: 6022820527793010296}
-  gunFire: {fileID: 5687178607236929447}
+  gunFire: {fileID: 0}
   cylinderAttachPoint: {fileID: 6994568177513605461}
   reload: {fileID: 5087100287938428518}
 --- !u!1 &4555175492606943019

@@ -79,6 +79,7 @@
     <Compile Include="Assets\MyAssets\Weapon\IEWeaponFire.cs" />
     <Compile Include="Assets\SimpleEnemyAI.cs" />
     <Compile Include="Assets\Bullet FX Pack Trail, Fire, Energy\Sources\Demo.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\Spawner\RayGateOnRound.cs" />
     <Compile Include="Assets\PumpSlide.cs" />
     <Compile Include="Assets\MyAssets\Weapon\Revolver Prefab\Scripts\GunFire.cs" />
     <Compile Include="Assets\MyAssets\Objects\Upgrade\Script\GameClearTrigger.cs" />
@@ -90,6 +91,7 @@
     <Compile Include="Assets\Ghoul\Assets\Scripts\AnkleGrabberExample.cs" />
     <Compile Include="Assets\XRLoadScene.cs" />
     <Compile Include="Assets\SciFi Warehouse Kit\Demo\Scripts\PushPhysics.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\Shop\ShopManager.cs" />
     <Compile Include="Assets\MyAssets\Weapon\Nova\NovaGun.cs" />
     <Compile Include="Assets\MyAssets\Weapon\Revolver Prefab\Scripts\ReloadSocketListener.cs" />
     <Compile Include="Assets\ShotgunReloadZone.cs" />
@@ -106,8 +108,8 @@
     <Compile Include="Assets\Unity UI Samples\Scripts\DragMe.cs" />
     <Compile Include="Assets\Scripts\SimpleBullet.cs" />
     <Compile Include="Assets\waterDepth.cs" />
-    <Compile Include="Assets\KeypadInput.cs" />
     <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\Spawner\WaveConfig.cs" />
+    <Compile Include="Assets\KeypadInput.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\ActiveStateToggler.cs" />
     <Compile Include="Assets\Scripts\BulletDamage.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\DragPanel.cs" />
@@ -117,6 +119,7 @@
     <Compile Include="Assets\Features\VRHands\Scripts\Finger.cs" />
     <Compile Include="Assets\PlayerHitboxLogger.cs" />
     <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\State Machine\ConcreteStates\ChaseState.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\Currency\CurrencyManager.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\PanelManager.cs" />
     <Compile Include="Assets\Scripts\HybridEnemyAI.cs" />
     <Compile Include="Assets\Scripts\MsgBox\MsgTrigger.cs" />

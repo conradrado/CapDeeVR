@@ -21,3 +21,7 @@ MonoBehaviour:
   DetectRange: 10
   AttackRange: 2
   AttackSpeed: 1
+  IsRangedOnly: 0
+  GoldReward: 10
+  Priority: 0
+  ObjectDetectRange: -1

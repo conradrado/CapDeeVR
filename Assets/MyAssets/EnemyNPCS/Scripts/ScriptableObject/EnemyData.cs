@@ -24,6 +24,9 @@ public class EnemyData : ScriptableObject
     // If true, this enemy should never use melee and should rely on ranged attacks.
     public bool IsRangedOnly = false;
 
+    [Header("Rewards")]
+    public int GoldReward = 10;
+
     public enum TargetPriority
     {
         PlayerFirst,
