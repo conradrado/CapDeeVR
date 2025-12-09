@@ -15,10 +15,14 @@ public class WaveSpawner : MonoBehaviour
     [SerializeField] bool loopWaves = false;
     [SerializeField] bool playOnStart = true;
     [SerializeField] bool manualAdvance = false; // true: wait for UI to start each wave
+    [Header("Completion")]
+    [SerializeField] Animator completionAnimator;
+    [SerializeField] string completionTrigger;
     [Header("Events")]
     public UnityEvent<int> onWaveStarted = new UnityEvent<int>();
     public UnityEvent<int> onWaveCompleted = new UnityEvent<int>();
     public UnityEvent<int> onAliveCountChanged = new UnityEvent<int>();
+    public UnityEvent onAllWavesCompleted = new UnityEvent();
 
     Coroutine _runner;
     readonly List<GameObject> _alive = new List<GameObject>();
@@ -87,6 +91,7 @@ public class WaveSpawner : MonoBehaviour
         }
         while (loopWaves);
 
+        HandleAllWavesCompleted();
         _isRunning = false;
     }
 
@@ -135,6 +140,8 @@ public class WaveSpawner : MonoBehaviour
         _currentWaveIndex = waveIndex + 1;
         if (loopWaves && _currentWaveIndex >= waves.Count)
             _currentWaveIndex = 0;
+        else if (!loopWaves && _currentWaveIndex >= waves.Count)
+            HandleAllWavesCompleted();
 
         _isRunning = false;
     }
@@ -220,6 +227,14 @@ public class WaveSpawner : MonoBehaviour
             }
             yield return null;
         }
+    }
+
+    void HandleAllWavesCompleted()
+    {
+        onAllWavesCompleted?.Invoke();
+
+        if (completionAnimator != null && !string.IsNullOrEmpty(completionTrigger))
+            completionAnimator.SetTrigger(completionTrigger);
     }
 
     void RaiseAliveCount() => onAliveCountChanged?.Invoke(_alive.Count);

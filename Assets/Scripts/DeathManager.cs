@@ -126,7 +126,7 @@ public class DeathManager : MonoBehaviour
         else
         {
             Time.timeScale = 1f;
-            SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+            SceneManager.LoadScene("MainMenu");
         }
     }
 }

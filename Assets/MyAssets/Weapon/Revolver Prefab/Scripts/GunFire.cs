@@ -40,6 +40,7 @@ public class GunFire : MonoBehaviour, IEWeaponFire
     public int MaxAmmo => maxAmmo + PlayerStat.AmmoBonus;
     public float DamagePerShot => GetBaseDamage() + extraDamage;
     public bool CanFire => currentAmmo > 0;
+    public bool IsEmpty => currentAmmo <= 0;
 
     private IEnumerator FlashMuzzle()
     {
@@ -115,8 +116,11 @@ public class GunFire : MonoBehaviour, IEWeaponFire
         if (gunAnimator != null)
             gunAnimator.SetTrigger("FireGun");
 
-        currentAmmo--;
+        currentAmmo = Mathf.Max(0, currentAmmo - 1);
         UpdateHud();
+
+        if (currentAmmo <= 0)
+            OnAmmoDepleted?.Invoke();
     }
 
     /* ---------- Utils ---------- */

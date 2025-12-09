@@ -65,7 +65,10 @@
     <Analyzer Include="C:\Program Files\Unity\Hub\Editor\6000.0.44f1\Editor\Data\Tools\Unity.SourceGenerators\Unity.UIToolkit.SourceGenerator.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Assets\Samples\AI Navigation\2.0.7\Build And Connect NavMesh Surfaces\Scripts\ProjectSettingsUtilities\Editor\NavigationSampleProjectSettingsGenerator.cs" />
     <Compile Include="Assets\TutorialInfo\Scripts\Editor\ReadmeEditor.cs" />
+    <Compile Include="Assets\XRI_Examples\Global\Scripts\Analytics\Editor\XrcSceneAnalyticsEditor.cs" />
+    <Compile Include="Assets\Samples\AI Navigation\2.0.7\Build And Connect NavMesh Surfaces\Scripts\ProjectSettingsUtilities\Editor\NavigationSampleSettingsState.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\EasyRoads3D\Editor\EasyRoads3Dv3Editor.dll" />
