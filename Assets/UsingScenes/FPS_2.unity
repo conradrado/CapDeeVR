@@ -849,7 +849,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: ffbdfe57db438bd47bc3225e988b1431, type: 2}
   m_BuildHeightMesh: 0
@@ -1961,7 +1961,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 6bcf39382f0841e4da3f43b91b7350e0, type: 2}
   m_BuildHeightMesh: 0
@@ -2319,7 +2319,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 09232deba4c7ce44097a9a5173c0c33f, type: 2}
   m_BuildHeightMesh: 0
@@ -2559,7 +2559,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 45ebb72208a9fa74e8f8a71c2859d960, type: 2}
   m_BuildHeightMesh: 0
@@ -3897,7 +3897,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: da8c79676198b0d419b197f8c89dc216, type: 2}
   m_BuildHeightMesh: 0
@@ -4486,7 +4486,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: e45c79d89201bd943948090c406d4c9d, type: 2}
   m_BuildHeightMesh: 0
@@ -5420,7 +5420,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 2aa3949a92de70644abf0e36c9673b6e, type: 2}
   m_BuildHeightMesh: 0
@@ -9479,7 +9479,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 62fad54da6291cf499371e6658545bf8, type: 2}
   m_BuildHeightMesh: 0
@@ -11183,7 +11183,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: f1aa61ec131f0db40a17ee4d4f3e4463, type: 2}
   m_BuildHeightMesh: 0
@@ -14508,7 +14508,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 8521d613f4fdc2640a22df01ed550870, type: 2}
   m_BuildHeightMesh: 0
@@ -14856,7 +14856,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 84763bcee1932f84aac59e767eaa4891, type: 2}
   m_BuildHeightMesh: 0
@@ -15211,7 +15211,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 0a0ef8865f6f598499e2a4102524e6ac, type: 2}
   m_BuildHeightMesh: 0
@@ -15294,7 +15294,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: ce9d1550fd3108a4c9d425df8ad2e00a, type: 2}
   m_BuildHeightMesh: 0
@@ -15609,7 +15609,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: c15f7409fe0518a41be13db67df9f30f, type: 2}
   m_BuildHeightMesh: 0
@@ -18235,7 +18235,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 30e42b6372b09634db0cea405f395811, type: 2}
   m_BuildHeightMesh: 0
@@ -19957,7 +19957,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 33bd83c815e402d46ad27c447b0b863f, type: 2}
   m_BuildHeightMesh: 0
@@ -21724,7 +21724,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: e0df43c4e1efbc74e9e42bd8090e370e, type: 2}
   m_BuildHeightMesh: 0
@@ -22855,7 +22855,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 8c55885629c72fe46a494acb4196a592, type: 2}
   m_BuildHeightMesh: 0
@@ -23593,7 +23593,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 031161c89d2d4c34e896851fb072a504, type: 2}
   m_BuildHeightMesh: 0
@@ -25052,7 +25052,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 2345df7a56165aa4fb8d3afa862e5a19, type: 2}
   m_BuildHeightMesh: 0
@@ -25965,7 +25965,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 1c3ffa97d584d5d4aa180372f2d693ea, type: 2}
   m_BuildHeightMesh: 0
@@ -26244,7 +26244,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: c8a3eb334e229c94eb703d46fb181682, type: 2}
   m_BuildHeightMesh: 0
@@ -26837,7 +26837,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: a038a30806208a246b84a4d355a6d8b2, type: 2}
   m_BuildHeightMesh: 0
@@ -27434,7 +27434,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: d2b5992d378848d46869b439553d9390, type: 2}
   m_BuildHeightMesh: 0
@@ -28664,7 +28664,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 92354e59b05083a42ad561e4995455ef, type: 2}
   m_BuildHeightMesh: 0
@@ -31409,7 +31409,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: ce61f58bde46ed44186d1303d26d973d, type: 2}
   m_BuildHeightMesh: 0
@@ -31512,7 +31512,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 4072bb8f370a99d498f27114e0cf0ffc, type: 2}
   m_BuildHeightMesh: 0
@@ -34309,7 +34309,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: c48fbf62dc059f040bcf358ba4c4f864, type: 2}
   m_BuildHeightMesh: 0
@@ -35207,7 +35207,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: f93039d11d4aec543965d290c1c4d798, type: 2}
   m_BuildHeightMesh: 0
@@ -35244,7 +35244,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 70f1fb7c64300c64885daa7d8a7c5310, type: 2}
   m_BuildHeightMesh: 0
@@ -35619,7 +35619,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 04d7db7aee176944dbf98acee21debe9, type: 2}
   m_BuildHeightMesh: 0
@@ -36005,7 +36005,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 4ab03b1b5a60a024db445fb87e83dec4, type: 2}
   m_BuildHeightMesh: 0
@@ -36163,7 +36163,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 0b7868941b3cfb54ab266c892d2268ca, type: 2}
   m_BuildHeightMesh: 0
@@ -36223,7 +36223,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 755734c059997e64cbfb550118adaf34, type: 2}
   m_BuildHeightMesh: 0
@@ -38117,7 +38117,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 128549f1b39d59140a64406f2330848b, type: 2}
   m_BuildHeightMesh: 0
@@ -42273,7 +42273,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 33533e59ab6fbad478c5dc1f1cee5811, type: 2}
   m_BuildHeightMesh: 0
@@ -42463,7 +42463,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 9c1cc00977034ee47931c5e448196ec4, type: 2}
   m_BuildHeightMesh: 0
@@ -42708,7 +42708,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 0}
   m_BuildHeightMesh: 0
@@ -42913,9 +42913,13 @@ MonoBehaviour:
     Prefab: {fileID: 1300064905706592724, guid: 9773b2ba8740ef647bd007234bca7266, type: 3}
     Cost: 20
     SpawnPoint: {fileID: 1925864964}
-  - Name: Upgrade Box
-    Prefab: {fileID: 1300064905706592724, guid: 9773b2ba8740ef647bd007234bca7266, type: 3}
-    Cost: 20
+  - Name: LaserRifle
+    Prefab: {fileID: 6657046800197716335, guid: 8096d73fcf584b149a9f5dc4fc1deba8, type: 3}
+    Cost: 44
+    SpawnPoint: {fileID: 1925864964}
+  - Name: LaserMagazine
+    Prefab: {fileID: 5916645103107237070, guid: 4a48d714fc7db2544bb81bcb73b33bc8, type: 3}
+    Cost: 4
     SpawnPoint: {fileID: 1925864964}
   shopPanel: {fileID: 1417473733}
   goldText: {fileID: 629694337}
@@ -43632,7 +43636,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 2c9cc1f07edaac244bdca6a9ee718ca2, type: 2}
   m_BuildHeightMesh: 0
@@ -43674,7 +43678,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 8ba2529b88dc3604a87fcf2f96ed9589, type: 2}
   m_BuildHeightMesh: 0
@@ -43939,7 +43943,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 114327524eed8db4d93fc15ba87da8f7, type: 2}
   m_BuildHeightMesh: 0
@@ -44039,7 +44043,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 4646496e1ccad194380f33d0c2c8f0b3, type: 2}
   m_BuildHeightMesh: 0
@@ -44561,7 +44565,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 8eaa23a368c8dbf459b3e77e2e13c302, type: 2}
   m_BuildHeightMesh: 0
@@ -49972,7 +49976,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 40e8fd87604f4fb48b3002e66c95efb3, type: 2}
   m_BuildHeightMesh: 0
@@ -50603,7 +50607,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: a7831b5e8124d1a43aeb0024cefa4d72, type: 2}
   m_BuildHeightMesh: 0
@@ -53140,7 +53144,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 3155de97433e53949b7a90f53705e6a8, type: 2}
   m_BuildHeightMesh: 0
@@ -53409,7 +53413,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 73558894915758b42b041034cf16ca67, type: 2}
   m_BuildHeightMesh: 0
@@ -53522,7 +53526,7 @@ MonoBehaviour:
   m_OverrideTileSize: 0
   m_TileSize: 256
   m_OverrideVoxelSize: 0
-  m_VoxelSize: 0.16666667
+  m_VoxelSize: 0.016666668
   m_MinRegionArea: 2
   m_NavMeshData: {fileID: 23800000, guid: 931883eb880aee34181b49767f44158e, type: 2}
   m_BuildHeightMesh: 0
