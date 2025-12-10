@@ -1,0 +1,22 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d11679456dee03418a794e8ce8ee84b, type: 3}
+  m_Name: TowerDefenseWave1
+  m_EditorClassIdentifier: 
+  StartDelay: 3
+  Entries:
+  - EnemyPrefab: {fileID: 7552049112901598555, guid: f1448ab75b3087f4bb8dbd7cc6a461ce, type: 3}
+    Count: 4
+    SpawnInterval: 0
+  - EnemyPrefab: {fileID: 4937354695612875684, guid: 8176e75392a26964c9732312894904f5, type: 3}
+    Count: 2
+    SpawnInterval: 5.25

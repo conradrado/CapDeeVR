@@ -16,8 +16,10 @@ public class EnemyStat : StatBehaviour
 
     EnemyStateManager _stateManager;
     bool _isDead;
+    bool _rewardGranted;
 
     public float Damage { get; private set; }
+    public int GoldReward { get; private set; }
 
     void Awake()
     {
@@ -35,6 +37,7 @@ public class EnemyStat : StatBehaviour
         {
             MaxHP = _enemyData.MaxHP;
             Damage = _enemyData.Damage;
+            GoldReward = _enemyData.GoldReward;
         }
         else
         {
@@ -59,6 +62,7 @@ public class EnemyStat : StatBehaviour
             return;
 
         _isDead = true;
+        GrantReward();
         if (_stateManager != null)
         {
             _stateManager.TransitionToState(new DeathState());
@@ -92,5 +96,14 @@ public class EnemyStat : StatBehaviour
         {
             Die();
         }
+    }
+
+    void GrantReward()
+    {
+        if (_rewardGranted)
+            return;
+
+        _rewardGranted = true;
+        CurrencyManager.Instance?.AddGold(GoldReward);
     }
 }

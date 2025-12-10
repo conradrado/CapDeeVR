@@ -2,7 +2,7 @@ using System.Collections;
 using UnityEngine;
 using UnityEngine.Rendering;
 
-public class PlayerStat : StatBehaviour
+public class PlayerStat : StatBehaviour, IDamageable
 {
     [Header("UI")]
     [SerializeField] HPBar _hpBar;

@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public class TargetEntity : MonoBehaviour
+public class TargetEntity : MonoBehaviour, IDamageable
 {
     [Header("스탯")]
     // 해당 엔티티, NPC의 최대 체력

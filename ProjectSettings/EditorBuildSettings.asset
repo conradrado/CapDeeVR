@@ -8,7 +8,7 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/MainMenu.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 99c9720ab356a0642a771bea13969a05
   - enabled: 1
@@ -20,6 +20,18 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ghfkl.unity
     guid: f3dc1863d7e956c41b7103ec63ec22ad
+  - enabled: 1
+    path: Assets/Scenes/FPS_1.unity
+    guid: e54b80625729b1c4584506f339e7d7e1
+  - enabled: 0
+    path: Assets/Samples/XR Interaction Toolkit/3.0.8/Starter Assets/DemoScene.unity
+    guid: 319dafa5c80f29f428dc1e0d03f04177
+  - enabled: 1
+    path: Assets/UsingScenes/FPS_2.unity
+    guid: 7ae53ca793571fd4389d4c7360a73c2b
+  - enabled: 1
+    path: Assets/Scenes/Puzzle_map/Puzzle.unity
+    guid: b42ca4c5c936383429d2318c931f7ad2
   m_configObjects:
     Unity.XR.Oculus.Settings: {fileID: 11400000, guid: 1ee1d409476bfbd4783c9f09ebde3196, type: 2}
     Unity.XR.OpenVR.Settings: {fileID: 11400000, guid: 6890b46bf6f7fc84b93cdd8b136a3821, type: 2}

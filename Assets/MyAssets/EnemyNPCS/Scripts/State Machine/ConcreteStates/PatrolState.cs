@@ -1,19 +1,18 @@
-using TMPro;
-using UnityEditor;
-using UnityEditor.Analytics;
 using UnityEngine;
 using UnityEngine.AI;
 
 
 public class PatrolState : IEnemyState
 {
-
     NavMeshAgent _agent;
     Animator _anim;
     Vector3 _patrolCenter;
     EnemyDetect _enemyDetect;
+    EnemyDataManager _enemyDataMgr;
+    EnemyData _enemyData;
+    bool _isRangedOnly;
     float _patrolRadius = 10f;
-
+    float _defendHoldRadius = 2.5f;
 
     float _moveTime = 0f;
     float _moveTimer = 0f;
@@ -22,41 +21,62 @@ public class PatrolState : IEnemyState
     {
         _anim = enemy.GetComponent<Animator>();
         _agent = enemy.GetComponent<NavMeshAgent>();
-
-        _patrolCenter = enemy.transform.position;
-
-        _anim.SetBool("IsIdle", false);
-        _anim.SetBool("IsChasing", false);
-        _anim.SetBool("IsWalking", true);
-        
-
-
-        _agent.isStopped = false;
-        _agent.autoBraking = true;
         _enemyDetect = enemy.GetComponent<EnemyDetect>();
+        _enemyDataMgr = enemy.GetComponent<EnemyDataManager>();
+        _enemyData = _enemyDataMgr != null ? _enemyDataMgr._enemyData : null;
+        _isRangedOnly = _enemyData != null && _enemyData.IsRangedOnly;
+
+        var defend = _enemyDetect != null ? _enemyDetect.DefendObject : null;
+        _patrolCenter = defend != null ? defend.position : enemy.transform.position;
+
+        if (_anim != null)
+        {
+            _anim.SetBool("IsIdle", false);
+            _anim.SetBool("IsChasing", false);
+            _anim.SetBool("IsWalking", true);
+        }
+
+        if (_agent != null)
+        {
+            _agent.isStopped = false;
+            _agent.autoBraking = true;
+        }
     }   
 
     public void ExitState(EnemyStateManager enemy)
     {
         Debug.Log("[Patrol State] : State Exited");
-        _anim.SetBool("IsWalking", false);
-        _anim.SetFloat("Speed", 0f);
-
+        if (_anim != null)
+        {
+            _anim.SetBool("IsWalking", false);
+            _anim.SetFloat("Speed", 0f);
+        }
     }
 
     public void UpdateState(EnemyStateManager enemy)
     {
+        _enemyDetect.RefreshTarget();
 
-
-        // agent.hasPath => 에이전트가 갈 경로가 존재하다는 뜻.
-        // agent.remainingDistance => 에이전트가 목적지까지 이동해야 할 남은 거리
-        // agent.remainingDistance <= agent.stoppingDistance 는 agent가 목적지까지 거의 다 왔음을 의미
-
-        _anim.SetFloat("Speed", _agent.velocity.magnitude);
-
-        if (!_agent.hasPath || _agent.remainingDistance <= _agent.stoppingDistance + 0.1f)
+        if (_enemyDetect != null && !_enemyDetect.HasTarget && _enemyDetect.DefendObject != null && _agent != null)
         {
-            // 도착 후 랜덤 대기
+            var defendPos = _enemyDetect.DefendObject.position;
+            float dist = Vector3.Distance(enemy.transform.position, defendPos);
+            _patrolCenter = defendPos;
+            if (dist > _defendHoldRadius)
+            {
+                _agent.isStopped = false;
+                _agent.SetDestination(defendPos);
+                if (_anim != null)
+                    _anim.SetFloat("Speed", _agent.velocity.magnitude);
+                return;
+            }
+        }
+
+        if (_anim != null && _agent != null)
+            _anim.SetFloat("Speed", _agent.velocity.magnitude);
+
+        if (_agent != null && (!_agent.hasPath || _agent.remainingDistance <= _agent.stoppingDistance + 0.1f))
+        {
             if (_moveTime <= 0f)
             {
                 _moveTime = Random.Range(1f, 4f);
@@ -66,27 +86,21 @@ public class PatrolState : IEnemyState
             _moveTimer += Time.deltaTime;
             if (_moveTimer >= _moveTime)
             {
-                _moveTime = 0f; // 다음 도착 때 다시 설정
+                _moveTime = 0f; // reset next wander time
                 PickNewDestination(_patrolCenter);
             }
         }
 
-        if (_enemyDetect.IsPlayerInDetectRange())
+        if (_enemyDetect.HasTarget)
         {
-            enemy.TransitionToState(new ChaseState());
+            enemy.TransitionToState(_isRangedOnly ? new ShootState() : new ChaseState());
         }
-
-
-
-
-
     }
     
     private void PickNewDestination(Vector3 center)
     {
-        if(TryGetRandomPointOnNavMesh(center, _patrolRadius,out var point))
+        if (TryGetRandomPointOnNavMesh(center, _patrolRadius,out var point))
         {   
-            
             _agent.SetDestination(point);
         }
     }

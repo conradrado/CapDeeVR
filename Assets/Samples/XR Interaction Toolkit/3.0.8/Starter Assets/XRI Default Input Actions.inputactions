@@ -1165,6 +1165,17 @@
                 },
                 {
                     "name": "",
+                    "id": "3ff6da8e-7acd-47af-afdd-609df12ded08",
+                    "path": "<ViveController>{LeftHand}/{TriggerButton}",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UI Press",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "71d94579-1bf4-4034-ab9e-e7166842128f",
                     "path": "<XRController>{LeftHand}/{Trigger}",
                     "interactions": "",
@@ -2247,6 +2258,17 @@
                     "name": "",
                     "id": "f8a900c7-8116-4f44-9d24-8f19caf07108",
                     "path": "<HoloLensHand>{RightHand}/selectPressed",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "UI Press",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "7fdbeb8b-f033-44af-8039-d796ea45e5bf",
+                    "path": "<ViveController>{RightHand}/{TriggerButton}",
                     "interactions": "",
                     "processors": "",
                     "groups": "",

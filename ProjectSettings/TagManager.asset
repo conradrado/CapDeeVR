@@ -12,7 +12,7 @@ TagManager:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Grab Interactable
   - Water
   - UI
   - PostProcessing
@@ -20,9 +20,9 @@ TagManager:
   - ShotgunPump
   - PostProcessing
   - Fuse
-  - 
-  - 
-  - 
+  - Player
+  - Gun
+  - Magazine
   - 
   - 
   - 

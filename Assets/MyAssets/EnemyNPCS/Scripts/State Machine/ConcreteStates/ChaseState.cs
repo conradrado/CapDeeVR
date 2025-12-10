@@ -8,17 +8,18 @@ public class ChaseState : IEnemyState
     EnemyDetect _enemyDetect;
     EnemyDataManager _enemyDataMgr;
     EnemyData _enemyData;
+    bool _isRangedOnly;
 
     // Tuning
-    float _loseSightGrace = 0.75f; // 감지 끊긴 뒤 허용 시간
+    float _loseSightGrace = 0.75f;
     float _loseTimer = 0f; 
-    float _keepDistance = 1.5f;    // 유지하고 싶은 간격
-    float _tol = 0.1f;             // 근접 판정 여유
+    float _keepDistance = 1.5f;
+    float _tol = 0.1f;
 
     // Repath control
     Vector3 _lastDest; 
-    float _repathCooldown = 0.15f; // 6~10Hz 정도로만 경로 타임을 갱신
-    float _repathTimer = 0f; // 경로 계산 타이머
+    float _repathCooldown = 0.15f;
+    float _repathTimer = 0f;
 
     public void EnterState(EnemyStateManager enemy)
     {
@@ -26,23 +27,23 @@ public class ChaseState : IEnemyState
         _agent = enemy.GetComponent<NavMeshAgent>();
         _enemyDetect = enemy.GetComponent<EnemyDetect>();
         _enemyDataMgr = enemy.GetComponent<EnemyDataManager>();
-        _enemyData = _enemyDataMgr._enemyData;
+        _enemyData = _enemyDataMgr != null ? _enemyDataMgr._enemyData : null;
+        _isRangedOnly = _enemyData != null && _enemyData.IsRangedOnly;
 
-        _loseTimer = 0f; // 추적 타이머를 0으로 초기화
-        _repathTimer = 0f; // 재탐색 타이머를 0으로 초기화
-        _lastDest = enemy.transform.position; // 플레이어의 포지션을 _lastDest에 지정
-
+        _loseTimer = 0f;
+        _repathTimer = 0f;
+        _lastDest = enemy.transform.position;
         if (_agent != null)
         {
-            _agent.enabled = true; // 에이전트 활성화
-            _agent.isStopped = false; // Stop 꺼
-            _agent.speed = _enemyData.ChaseSpeed;
+            _agent.enabled = true;
+            _agent.isStopped = false;
+            _agent.speed = _enemyData != null ? _enemyData.ChaseSpeed : _agent.speed;
             _agent.updatePosition = true; 
             _agent.updateRotation = true;
-            _agent.stoppingDistance = _keepDistance; // 플레이어와의 거리를 최대 0.1까지 
+            _agent.stoppingDistance = _keepDistance;
             _agent.angularSpeed = Mathf.Max(_agent.angularSpeed, 120f);
             _agent.acceleration = Mathf.Max(_agent.acceleration, 8f);
-            _agent.autoRepath = true; // 자동 재탐색 기능 활성화
+            _agent.autoRepath = true;
             _agent.autoBraking = false; 
         }
 
@@ -71,24 +72,41 @@ public class ChaseState : IEnemyState
             enemy.TransitionToState(new PatrolState());
             return;
         }
-        if (_enemyDetect == null || _enemyDetect.Target == null)
+        if (_enemyDetect == null)
         {
             enemy.TransitionToState(new PatrolState());
             return;
         }
 
+        _enemyDetect.RefreshTarget();
+        var target = _enemyDetect.Target;
+        if (!_enemyDetect.HasTarget || target == null)
+        {
+            enemy.TransitionToState(new PatrolState());
+            return;
+        }
+
+        // Ranged-only: hold position and switch to shoot when target spotted.
+        if (_isRangedOnly)
+        {
+            _agent.isStopped = true;
+            _agent.ResetPath();
+            enemy.TransitionToState(new ShootState());
+            return;
+        }
+
         _repathTimer -= Time.deltaTime;
 
-        var targetPos = _enemyDetect.Target.position;
+        var targetPos = target.position;
 
-        // NavMesh 위로 목적지 스냅(타깃이 비네비일 경우 대비), 에이전트 areaMask 사용
+        // Snap target to NavMesh if possible
         if (NavMesh.SamplePosition(targetPos, out var hit, 2f, _agent.areaMask))
             targetPos = hit.position;
 
         var selfPos = enemy.transform.position;
         float dist = Vector3.Distance(selfPos, targetPos);
 
-        if (_enemyDetect.IsPlayerInDetectRange())
+        if (_enemyDetect.HasTarget)
         {
             _loseTimer = 0f;
 
@@ -144,13 +162,9 @@ public class ChaseState : IEnemyState
             }
         }
 
-        if (_enemyDetect.IsPlayerInAttackRange())
+        if (_enemyDetect.IsCurrentTargetInAttackRange())
         {
             enemy.TransitionToState(new MeleeState());
         }
-
-        // 진단 로그: 필요 시 활성화
-        // Debug.Log($"[Chase] stopped={_agent.isStopped}, hasPath={_agent.hasPath}, pending={_agent.pathPending}, status={_agent.pathStatus}, rem={_agent.remainingDistance:F2}, vel={_agent.velocity.magnitude:F2}");
     }
 }
-

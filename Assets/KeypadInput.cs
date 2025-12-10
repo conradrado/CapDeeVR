@@ -1,15 +1,13 @@
 using UnityEngine;
-using TMPro; // TextMeshPro ��� ��
-using UnityEngine.UI;
+using TMPro;
 
 public class KeypadInput : MonoBehaviour
 {
     public TextMeshProUGUI displayText;
-    public string correctPassword = "1234";
+    public string correctPassword = "3145";
     private string input = "";
 
-    public SafeDoor safeDoor; 
-    public Animator doorAnimator;
+    public GameObject doorBlocker;   // 문 막는 큐브
 
     public void AddDigit(string digit)
     {
@@ -31,7 +29,10 @@ public class KeypadInput : MonoBehaviour
         if (input == correctPassword)
         {
             displayText.text = "Correct!";
-            doorAnimator.SetTrigger("OpenDoor");
+
+            // 상자 비활성화 (문이 열리도록)
+            if (doorBlocker != null)
+                doorBlocker.SetActive(false);
         }
         else
         {
@@ -41,3 +42,4 @@ public class KeypadInput : MonoBehaviour
         input = "";
     }
 }
+
