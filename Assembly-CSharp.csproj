@@ -140,6 +140,7 @@
     <Compile Include="Assets\Scripts\UIAudio.cs" />
     <Compile Include="Assets\RushHour\Script\VehicleController.cs" />
     <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\Enemy\EnemyDetect.cs" />
+    <Compile Include="Assets\MyAssets\EnemyNPCS\Scripts\Spawner\NearFarGateOnTrigger.cs" />
     <Compile Include="Assets\VR_SafePrefab_UnityProjectStyle\Assets\SafePrefab\Scripts\SafeDoor.cs" />
     <Compile Include="Assets\XRI_Examples\Global\Scripts\Analytics\Events\EditorEvent.cs" />
     <Compile Include="Assets\Weight_Puzzle\PuzzleGateController.cs" />
@@ -284,7 +285,6 @@
     <Compile Include="Assets\Samples\AI Navigation\2.0.7\Build And Connect NavMesh Surfaces\Scripts\RandomInstancing.cs" />
     <Compile Include="Assets\Brick Project Studio\_BPS Basic Assets\Common\Scripts and Animations\Windows\opencloseWindow1.cs" />
     <Compile Include="Assets\XRI_Examples\VRWalkthrough\Scripts\UI\TurnToFace.cs" />
-    <Compile Include="Assets\Sci Fi Modular Pack\Scripts\CameraController.cs" />
     <Compile Include="Assets\XRI_Examples\Global\Scripts\Analytics\Behaviours\XrcGrabInteractableStationAnalytics.cs" />
     <Compile Include="Assets\Unity UI Samples\Scripts\DropMe.cs" />
     <Compile Include="Assets\JusticeScale\Demo\Scripts\ClickAndClone.cs" />

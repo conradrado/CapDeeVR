@@ -11,7 +11,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/MainMenu.unity
     guid: 99c9720ab356a0642a771bea13969a05
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Tutorial 1.unity
     guid: c4480f5a336f9af48a4be2d5972b65cb
   - enabled: 0
@@ -20,16 +20,16 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/ghfkl.unity
     guid: f3dc1863d7e956c41b7103ec63ec22ad
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/FPS_1.unity
     guid: e54b80625729b1c4584506f339e7d7e1
   - enabled: 0
     path: Assets/Samples/XR Interaction Toolkit/3.0.8/Starter Assets/DemoScene.unity
     guid: 319dafa5c80f29f428dc1e0d03f04177
-  - enabled: 1
+  - enabled: 0
     path: Assets/UsingScenes/FPS_2.unity
     guid: 7ae53ca793571fd4389d4c7360a73c2b
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/Puzzle_map/Puzzle.unity
     guid: b42ca4c5c936383429d2318c931f7ad2
   m_configObjects:
